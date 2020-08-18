@@ -9,9 +9,11 @@ com a Metodologia do Processo Unificado utilizando ciclo de vida Ágil.
 
 ## Indice
 
-*[Documentação](https://pages.github.com/)
-*[TP1](https://pages.github.com/)
-*[Projeto](https://pages.github.com/)
+-[Documentação](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao)
+
+-[TP1](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao/tp1)
+
+-[Projeto](https://github.com/Rfilomeno/VenturaHR/)
 
 ## Organização do Projeto
 
@@ -22,5 +24,5 @@ Performance, diagramas, casos de uso e etc...
 
 ### Créditos
 
-** _O projeto será desenvolvido baseando-se nas propostas apresentadas pelo
-Prof. Armênio Cardoso_ **
+**_O projeto será desenvolvido baseando-se nas propostas apresentadas pelo
+Prof. Armênio Cardoso_**
