@@ -7,13 +7,16 @@ Este é um projeto de um sistema voltado para RH, que será desenvolvido
 utilizando os ensinamentos sobre Melhores Práticas de Desenvolvimento,
 com a Metodologia do Processo Unificado utilizando ciclo de vida Ágil.
 
+
 ## Índice
 
--[Documentação](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao)
+-[Documentação](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao): Pasta onde ficam contidos todos os documentos gerados para o projeto.
 
--[TP1](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao/tp1)
+-[Documento de Visão do projeto](https://github.com/Rfilomeno/VenturaHR/blob/master/Documentacao/DocumentoVisao_VenturaSoft.pdf): Minuta inicial do sistema.
 
--[Projeto](https://github.com/Rfilomeno/VenturaHR/)
+-[TP1](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao/tp1): Teste de Performance 1
+
+-[Projeto](https://github.com/Rfilomeno/VenturaHR/): Pasta do projeto.
 
 ## Organização do Projeto
 
