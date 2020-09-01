@@ -16,6 +16,8 @@ com a Metodologia do Processo Unificado utilizando ciclo de vida Ágil.
 
 -[TP1](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao/tp1): Teste de Performance 1
 
+-[TP3](https://github.com/Rfilomeno/VenturaHR/tree/master/Documentacao/tp3): Teste de Performance 3
+
 -[Projeto](https://github.com/Rfilomeno/VenturaHR/): Pasta do projeto.
 
 ## Organização do Projeto
