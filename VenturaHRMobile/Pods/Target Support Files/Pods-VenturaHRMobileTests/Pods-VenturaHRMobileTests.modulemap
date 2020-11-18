@@ -1,0 +1,6 @@
+framework module Pods_VenturaHRMobileTests {
+  umbrella header "Pods-VenturaHRMobileTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

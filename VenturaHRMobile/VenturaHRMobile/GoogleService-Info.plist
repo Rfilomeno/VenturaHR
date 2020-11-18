@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>279403041617-3gb3dm0ci3s2871f6cuvkglkskl34g74.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.279403041617-3gb3dm0ci3s2871f6cuvkglkskl34g74</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBI6ydZDNRc6ebg9pBgSuY0nRoht0AMSq4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>279403041617</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>br.com.infnet.al.rfilomeno.VenturaHRMobile</string>
+	<key>PROJECT_ID</key>
+	<string>venturahr-2849c</string>
+	<key>STORAGE_BUCKET</key>
+	<string>venturahr-2849c.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:279403041617:ios:5586556c6f466653433970</string>
+	<key>DATABASE_URL</key>
+	<string>https://venturahr-2849c.firebaseio.com</string>
+</dict>
+</plist>

@@ -1,0 +1,709 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08DFBCB8B79B42213B6A79A6 /* Pods_VenturaHRMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C60C195515793643D396249 /* Pods_VenturaHRMobileTests.framework */; };
+		772EE5D925557DB200840A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5D825557DB200840A0E /* AppDelegate.swift */; };
+		772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5DA25557DB200840A0E /* SceneDelegate.swift */; };
+		772EE5DD25557DB200840A0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5DC25557DB200840A0E /* ViewController.swift */; };
+		772EE5E025557DB200840A0E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772EE5DE25557DB200840A0E /* Main.storyboard */; };
+		772EE5E225557DB900840A0E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772EE5E125557DB900840A0E /* Assets.xcassets */; };
+		772EE5E525557DB900840A0E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772EE5E325557DB900840A0E /* LaunchScreen.storyboard */; };
+		772EE5F025557DB900840A0E /* VenturaHRMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5EF25557DB900840A0E /* VenturaHRMobileTests.swift */; };
+		776AE2702563F4C9008403F2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 776AE26F2563F4C9008403F2 /* GoogleService-Info.plist */; };
+		776AE275256449B4008403F2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE273256449B4008403F2 /* RegisterViewController.swift */; };
+		776AE276256449B4008403F2 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 776AE274256449B4008403F2 /* RegisterViewController.xib */; };
+		776AE27925644A4A008403F2 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE27825644A4A008403F2 /* User.swift */; };
+		776AE27B25644D4C008403F2 /* Company.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE27A25644D4C008403F2 /* Company.swift */; };
+		776AE27D256450C6008403F2 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE27C256450C6008403F2 /* Candidate.swift */; };
+		776AE280256451D7008403F2 /* JobOpportunity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE27F256451D7008403F2 /* JobOpportunity.swift */; };
+		776AE28225645613008403F2 /* Answer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE28125645613008403F2 /* Answer.swift */; };
+		776AE284256456E5008403F2 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE283256456E5008403F2 /* Skill.swift */; };
+		776AE28725645CD7008403F2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE28625645CD7008403F2 /* DateHelper.swift */; };
+		776AE289256496B1008403F2 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE288256496B1008403F2 /* LoginRepository.swift */; };
+		F70D06301EF7E30AE4B08AD3 /* Pods_VenturaHRMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE9CF665029C01A8F6C5C5B /* Pods_VenturaHRMobile.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		772EE5EC25557DB900840A0E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 772EE5CD25557DB100840A0E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 772EE5D425557DB100840A0E;
+			remoteInfo = VenturaHRMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FC8311B650A982BE92F1BB2 /* Pods-VenturaHRMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobile.release.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobile/Pods-VenturaHRMobile.release.xcconfig"; sourceTree = "<group>"; };
+		4EE9CF665029C01A8F6C5C5B /* Pods_VenturaHRMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenturaHRMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		772EE5D525557DB200840A0E /* VenturaHRMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenturaHRMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		772EE5D825557DB200840A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		772EE5DA25557DB200840A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		772EE5DC25557DB200840A0E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		772EE5DF25557DB200840A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		772EE5E125557DB900840A0E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		772EE5E425557DB900840A0E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		772EE5E625557DB900840A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		772EE5EB25557DB900840A0E /* VenturaHRMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VenturaHRMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		772EE5EF25557DB900840A0E /* VenturaHRMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VenturaHRMobileTests.swift; sourceTree = "<group>"; };
+		772EE5F125557DB900840A0E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		776AE26F2563F4C9008403F2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		776AE273256449B4008403F2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		776AE274256449B4008403F2 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		776AE27825644A4A008403F2 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		776AE27A25644D4C008403F2 /* Company.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Company.swift; sourceTree = "<group>"; };
+		776AE27C256450C6008403F2 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		776AE27F256451D7008403F2 /* JobOpportunity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpportunity.swift; sourceTree = "<group>"; };
+		776AE28125645613008403F2 /* Answer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answer.swift; sourceTree = "<group>"; };
+		776AE283256456E5008403F2 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
+		776AE28625645CD7008403F2 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
+		776AE288256496B1008403F2 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		8C60C195515793643D396249 /* Pods_VenturaHRMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenturaHRMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A2A8E21BDCDB8CC5D4653144 /* Pods-VenturaHRMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobileTests.release.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobileTests/Pods-VenturaHRMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		CC73530EA9ABE5AC60496050 /* Pods-VenturaHRMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobileTests/Pods-VenturaHRMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E5244FDC50657199F5805ACC /* Pods-VenturaHRMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobile.debug.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobile/Pods-VenturaHRMobile.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		772EE5D225557DB100840A0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F70D06301EF7E30AE4B08AD3 /* Pods_VenturaHRMobile.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		772EE5E825557DB900840A0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08DFBCB8B79B42213B6A79A6 /* Pods_VenturaHRMobileTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		772EE5CC25557DB100840A0E = {
+			isa = PBXGroup;
+			children = (
+				772EE5D725557DB200840A0E /* VenturaHRMobile */,
+				772EE5EE25557DB900840A0E /* VenturaHRMobileTests */,
+				772EE5D625557DB200840A0E /* Products */,
+				F78E57A4EA8646AA3AC813F9 /* Pods */,
+				CA91FB4C2ED29EDD5C8F678C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		772EE5D625557DB200840A0E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				772EE5D525557DB200840A0E /* VenturaHRMobile.app */,
+				772EE5EB25557DB900840A0E /* VenturaHRMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		772EE5D725557DB200840A0E /* VenturaHRMobile */ = {
+			isa = PBXGroup;
+			children = (
+				772EE6002555812F00840A0E /* Views */,
+				772EE5FD2555808900840A0E /* Controllers */,
+				772EE5FB2555804D00840A0E /* Repository */,
+				772EE5FA2555803F00840A0E /* Domain */,
+				776AE28525645CBF008403F2 /* Helpers */,
+				772EE5D825557DB200840A0E /* AppDelegate.swift */,
+				772EE5DA25557DB200840A0E /* SceneDelegate.swift */,
+				772EE5E125557DB900840A0E /* Assets.xcassets */,
+				772EE5E325557DB900840A0E /* LaunchScreen.storyboard */,
+				772EE5E625557DB900840A0E /* Info.plist */,
+				776AE26F2563F4C9008403F2 /* GoogleService-Info.plist */,
+			);
+			path = VenturaHRMobile;
+			sourceTree = "<group>";
+		};
+		772EE5EE25557DB900840A0E /* VenturaHRMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				772EE5EF25557DB900840A0E /* VenturaHRMobileTests.swift */,
+				772EE5F125557DB900840A0E /* Info.plist */,
+			);
+			path = VenturaHRMobileTests;
+			sourceTree = "<group>";
+		};
+		772EE5FA2555803F00840A0E /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				776AE27E256451A1008403F2 /* JobOportunity */,
+				776AE27725644A2E008403F2 /* User */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		772EE5FB2555804D00840A0E /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				776AE288256496B1008403F2 /* LoginRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		772EE5FD2555808900840A0E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				776AE2722564496D008403F2 /* Register */,
+				772EE5FF255580DB00840A0E /* Login */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		772EE5FF255580DB00840A0E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				772EE5DC25557DB200840A0E /* ViewController.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		772EE6002555812F00840A0E /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				776AE2712564495A008403F2 /* Register */,
+				772EE6012555813800840A0E /* Login */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		772EE6012555813800840A0E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				772EE5DE25557DB200840A0E /* Main.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		776AE2712564495A008403F2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				776AE274256449B4008403F2 /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		776AE2722564496D008403F2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				776AE273256449B4008403F2 /* RegisterViewController.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		776AE27725644A2E008403F2 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				776AE27825644A4A008403F2 /* User.swift */,
+				776AE27A25644D4C008403F2 /* Company.swift */,
+				776AE27C256450C6008403F2 /* Candidate.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
+		776AE27E256451A1008403F2 /* JobOportunity */ = {
+			isa = PBXGroup;
+			children = (
+				776AE27F256451D7008403F2 /* JobOpportunity.swift */,
+				776AE28125645613008403F2 /* Answer.swift */,
+				776AE283256456E5008403F2 /* Skill.swift */,
+			);
+			path = JobOportunity;
+			sourceTree = "<group>";
+		};
+		776AE28525645CBF008403F2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				776AE28625645CD7008403F2 /* DateHelper.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		CA91FB4C2ED29EDD5C8F678C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4EE9CF665029C01A8F6C5C5B /* Pods_VenturaHRMobile.framework */,
+				8C60C195515793643D396249 /* Pods_VenturaHRMobileTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F78E57A4EA8646AA3AC813F9 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E5244FDC50657199F5805ACC /* Pods-VenturaHRMobile.debug.xcconfig */,
+				2FC8311B650A982BE92F1BB2 /* Pods-VenturaHRMobile.release.xcconfig */,
+				CC73530EA9ABE5AC60496050 /* Pods-VenturaHRMobileTests.debug.xcconfig */,
+				A2A8E21BDCDB8CC5D4653144 /* Pods-VenturaHRMobileTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		772EE5D425557DB100840A0E /* VenturaHRMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 772EE5F425557DB900840A0E /* Build configuration list for PBXNativeTarget "VenturaHRMobile" */;
+			buildPhases = (
+				C25BBCD717B6C7437BACC2C4 /* [CP] Check Pods Manifest.lock */,
+				772EE5D125557DB100840A0E /* Sources */,
+				772EE5D225557DB100840A0E /* Frameworks */,
+				772EE5D325557DB100840A0E /* Resources */,
+				A9F07BFD2FA7A5CD9BC765B3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = VenturaHRMobile;
+			productName = VenturaHRMobile;
+			productReference = 772EE5D525557DB200840A0E /* VenturaHRMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		772EE5EA25557DB900840A0E /* VenturaHRMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 772EE5F725557DB900840A0E /* Build configuration list for PBXNativeTarget "VenturaHRMobileTests" */;
+			buildPhases = (
+				3D36DA27964F8341BF55A017 /* [CP] Check Pods Manifest.lock */,
+				772EE5E725557DB900840A0E /* Sources */,
+				772EE5E825557DB900840A0E /* Frameworks */,
+				772EE5E925557DB900840A0E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				772EE5ED25557DB900840A0E /* PBXTargetDependency */,
+			);
+			name = VenturaHRMobileTests;
+			productName = VenturaHRMobileTests;
+			productReference = 772EE5EB25557DB900840A0E /* VenturaHRMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		772EE5CD25557DB100840A0E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = "Rodrigo Filomeno";
+				TargetAttributes = {
+					772EE5D425557DB100840A0E = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					772EE5EA25557DB900840A0E = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = 772EE5D425557DB100840A0E;
+					};
+				};
+			};
+			buildConfigurationList = 772EE5D025557DB100840A0E /* Build configuration list for PBXProject "VenturaHRMobile" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 772EE5CC25557DB100840A0E;
+			productRefGroup = 772EE5D625557DB200840A0E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				772EE5D425557DB100840A0E /* VenturaHRMobile */,
+				772EE5EA25557DB900840A0E /* VenturaHRMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		772EE5D325557DB100840A0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772EE5E525557DB900840A0E /* LaunchScreen.storyboard in Resources */,
+				776AE276256449B4008403F2 /* RegisterViewController.xib in Resources */,
+				776AE2702563F4C9008403F2 /* GoogleService-Info.plist in Resources */,
+				772EE5E225557DB900840A0E /* Assets.xcassets in Resources */,
+				772EE5E025557DB200840A0E /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		772EE5E925557DB900840A0E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3D36DA27964F8341BF55A017 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VenturaHRMobileTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A9F07BFD2FA7A5CD9BC765B3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VenturaHRMobile/Pods-VenturaHRMobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-VenturaHRMobile/Pods-VenturaHRMobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-VenturaHRMobile/Pods-VenturaHRMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C25BBCD717B6C7437BACC2C4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-VenturaHRMobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		772EE5D125557DB100840A0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772EE5DD25557DB200840A0E /* ViewController.swift in Sources */,
+				772EE5D925557DB200840A0E /* AppDelegate.swift in Sources */,
+				772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */,
+				776AE28225645613008403F2 /* Answer.swift in Sources */,
+				776AE27925644A4A008403F2 /* User.swift in Sources */,
+				776AE289256496B1008403F2 /* LoginRepository.swift in Sources */,
+				776AE27D256450C6008403F2 /* Candidate.swift in Sources */,
+				776AE275256449B4008403F2 /* RegisterViewController.swift in Sources */,
+				776AE284256456E5008403F2 /* Skill.swift in Sources */,
+				776AE27B25644D4C008403F2 /* Company.swift in Sources */,
+				776AE28725645CD7008403F2 /* DateHelper.swift in Sources */,
+				776AE280256451D7008403F2 /* JobOpportunity.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		772EE5E725557DB900840A0E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				772EE5F025557DB900840A0E /* VenturaHRMobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		772EE5ED25557DB900840A0E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 772EE5D425557DB100840A0E /* VenturaHRMobile */;
+			targetProxy = 772EE5EC25557DB900840A0E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		772EE5DE25557DB200840A0E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				772EE5DF25557DB200840A0E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		772EE5E325557DB900840A0E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				772EE5E425557DB900840A0E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		772EE5F225557DB900840A0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		772EE5F325557DB900840A0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		772EE5F525557DB900840A0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E5244FDC50657199F5805ACC /* Pods-VenturaHRMobile.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DQM8J3NWG;
+				INFOPLIST_FILE = VenturaHRMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.infnet.al.rfilomeno.VenturaHRMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		772EE5F625557DB900840A0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2FC8311B650A982BE92F1BB2 /* Pods-VenturaHRMobile.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DQM8J3NWG;
+				INFOPLIST_FILE = VenturaHRMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.infnet.al.rfilomeno.VenturaHRMobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		772EE5F825557DB900840A0E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC73530EA9ABE5AC60496050 /* Pods-VenturaHRMobileTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DQM8J3NWG;
+				INFOPLIST_FILE = VenturaHRMobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.infnet.al.rfilomeno.VenturaHRMobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenturaHRMobile.app/VenturaHRMobile";
+			};
+			name = Debug;
+		};
+		772EE5F925557DB900840A0E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2A8E21BDCDB8CC5D4653144 /* Pods-VenturaHRMobileTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7DQM8J3NWG;
+				INFOPLIST_FILE = VenturaHRMobileTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.infnet.al.rfilomeno.VenturaHRMobileTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/VenturaHRMobile.app/VenturaHRMobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		772EE5D025557DB100840A0E /* Build configuration list for PBXProject "VenturaHRMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				772EE5F225557DB900840A0E /* Debug */,
+				772EE5F325557DB900840A0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		772EE5F425557DB900840A0E /* Build configuration list for PBXNativeTarget "VenturaHRMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				772EE5F525557DB900840A0E /* Debug */,
+				772EE5F625557DB900840A0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		772EE5F725557DB900840A0E /* Build configuration list for PBXNativeTarget "VenturaHRMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				772EE5F825557DB900840A0E /* Debug */,
+				772EE5F925557DB900840A0E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 772EE5CD25557DB100840A0E /* Project object */;
+}
