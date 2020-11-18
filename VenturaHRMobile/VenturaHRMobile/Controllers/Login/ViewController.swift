@@ -12,22 +12,43 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet var newAccountButton: UIView!
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
     }
 
     @IBAction func LoginButtonAction(_ sender: Any) {
-        
-        if (LoginRepository.proceedLogin(email: emailField.text ?? "", password: passwordField.text ?? "")){
-            print("Logou")
+        let user = LoginRepository.proceedLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
+        if let userLogged = user{
+            let tabBar = HomeStrategy.getTabBar(for: userLogged)
+            self.present(tabBar, animated: true)
         } else {
-            print("Deu Ruim")
+            print("Deu ruim no loggin")
         }
         
     }
+    
+    
+    @IBAction func newAccountButtonAction(_ sender: Any) {
+        let alert = UIAlertController(title: "Qual tipo de Conta deseja criar?", message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "PJ", style: .default, handler: { action in
+        let controller = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+            controller.isCompany = true
+        self.navigationController?.pushViewController(controller, animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "PF", style: .default, handler: { action in
+        let controller = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        controller.isCompany = false
+        self.navigationController?.pushViewController(controller, animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "cancelar", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+   
     
 }
 

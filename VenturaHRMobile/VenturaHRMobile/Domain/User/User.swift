@@ -8,6 +8,11 @@
 
 import Foundation
 
+
+public enum UserType {
+    case PF, PJ
+}
+
 public protocol User {
     
     var id: String {get set}
@@ -15,6 +20,7 @@ public protocol User {
     var email: String {get set}
     var phone: String? {get set}
     var address: String? {get set}
-    
+    var type: UserType {get set}
+    var password: String {get set}
     
 }

@@ -9,6 +9,17 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="VenturaHRMobile" customModuleProvider="target">
             <connections>
+                <outlet property="addressField" destination="yth-2y-GfT" id="1KB-06-yCC"/>
+                <outlet property="confirmPassowrdField" destination="4z2-HW-kEl" id="pVK-vs-S4s"/>
+                <outlet property="contactField" destination="ESt-kh-PcX" id="ZuO-JJ-Zed"/>
+                <outlet property="contactLabel" destination="zlK-CA-1yx" id="Ggb-Pu-8mr"/>
+                <outlet property="cpfField" destination="8Qs-oc-1Jw" id="cmd-nr-jvB"/>
+                <outlet property="cpfLabel" destination="Ddk-yZ-aTy" id="BJp-jY-DS7"/>
+                <outlet property="emailField" destination="kbW-fM-6eU" id="wrf-8S-2vc"/>
+                <outlet property="nameField" destination="dID-Rl-HLD" id="x4V-O7-6Us"/>
+                <outlet property="nameLabel" destination="ONB-6h-Cz9" id="xsz-5e-FFx"/>
+                <outlet property="passorwdField" destination="ntP-TD-IdZ" id="5Kk-f7-elg"/>
+                <outlet property="phoneField" destination="QbV-le-YbD" id="fiZ-y1-Q2F"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -78,13 +89,13 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome para contato:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-CA-1yx">
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome para contato:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zlK-CA-1yx">
                     <rect key="frame" x="20" y="312" width="172" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESt-kh-PcX">
+                <textField hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ESt-kh-PcX">
                     <rect key="frame" x="200" y="307" width="155" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
@@ -118,6 +129,9 @@
                     <state key="normal" title="Cadastrar">
                         <color key="titleColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </state>
+                    <connections>
+                        <action selector="registerButtonAction:" destination="-1" eventType="touchUpInside" id="gbt-aH-KlA"/>
+                    </connections>
                 </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

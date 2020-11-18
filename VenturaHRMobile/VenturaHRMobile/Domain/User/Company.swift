@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 public class Company: User {
-    
+    public var type: UserType = .PJ
     public var id: String
     public var name: String
     public var contactName: String
@@ -18,15 +18,18 @@ public class Company: User {
     public var cnpj: String?
     public var phone: String?
     public var address: String?
+    public var password: String
     
-    public var logo: UIImage?
     
-    init(name:String, email:String, contactName: String, cnpj:String?) {
+    
+    
+    init(name:String, email:String, contactName: String, cnpj:String?, password: String) {
         self.id = UUID().uuidString
         self.name = name
         self.email = email
         self.cnpj = cnpj
         self.contactName = contactName
+        self.password = password
     }
     
     

@@ -11,9 +11,15 @@ import Foundation
 public class LoginRepository{
     
     
-    public static func proceedLogin(email:String, password:String) -> Bool {
+    public static func proceedLogin(email:String, password:String) -> User? {
         
-        return (email == "rm.filomeno@gmail.com" && password == "123456")
+        let repository = UserRepository.shared
+        
+        if let user = repository.getUser(email: email){
+            return (user.password == password ? user : nil)
+        }
+        
+        return nil
         
         
     }

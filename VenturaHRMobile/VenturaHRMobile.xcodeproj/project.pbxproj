@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		08DFBCB8B79B42213B6A79A6 /* Pods_VenturaHRMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8C60C195515793643D396249 /* Pods_VenturaHRMobileTests.framework */; };
+		7724C5B625655AF300EF38BF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5B525655AF300EF38BF /* UserRepository.swift */; };
+		7724C5BC2565A20400EF38BF /* JobOpportunityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */; };
+		7724C5BE2565A47000EF38BF /* MockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BD2565A47000EF38BF /* MockHelper.swift */; };
+		7724C5D82565B06200EF38BF /* JobOpportunityListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5D62565B06200EF38BF /* JobOpportunityListViewController.swift */; };
+		7724C5D92565B06200EF38BF /* JobOpportunityListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7724C5D72565B06200EF38BF /* JobOpportunityListViewController.xib */; };
+		7724C5DD2565B13700EF38BF /* MyJobOpportunityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5DB2565B13700EF38BF /* MyJobOpportunityViewController.swift */; };
+		7724C5DE2565B13700EF38BF /* MyJobOpportunityViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7724C5DC2565B13700EF38BF /* MyJobOpportunityViewController.xib */; };
+		7724C5E12565BE4D00EF38BF /* HomeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5E02565BE4D00EF38BF /* HomeStrategy.swift */; };
 		772EE5D925557DB200840A0E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5D825557DB200840A0E /* AppDelegate.swift */; };
 		772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5DA25557DB200840A0E /* SceneDelegate.swift */; };
 		772EE5DD25557DB200840A0E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EE5DC25557DB200840A0E /* ViewController.swift */; };
@@ -42,6 +50,14 @@
 /* Begin PBXFileReference section */
 		2FC8311B650A982BE92F1BB2 /* Pods-VenturaHRMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobile.release.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobile/Pods-VenturaHRMobile.release.xcconfig"; sourceTree = "<group>"; };
 		4EE9CF665029C01A8F6C5C5B /* Pods_VenturaHRMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenturaHRMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7724C5B525655AF300EF38BF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
+		7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpportunityRepository.swift; sourceTree = "<group>"; };
+		7724C5BD2565A47000EF38BF /* MockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelper.swift; sourceTree = "<group>"; };
+		7724C5D62565B06200EF38BF /* JobOpportunityListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpportunityListViewController.swift; sourceTree = "<group>"; };
+		7724C5D72565B06200EF38BF /* JobOpportunityListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobOpportunityListViewController.xib; sourceTree = "<group>"; };
+		7724C5DB2565B13700EF38BF /* MyJobOpportunityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJobOpportunityViewController.swift; sourceTree = "<group>"; };
+		7724C5DC2565B13700EF38BF /* MyJobOpportunityViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyJobOpportunityViewController.xib; sourceTree = "<group>"; };
+		7724C5E02565BE4D00EF38BF /* HomeStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeStrategy.swift; sourceTree = "<group>"; };
 		772EE5D525557DB200840A0E /* VenturaHRMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VenturaHRMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772EE5D825557DB200840A0E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772EE5DA25557DB200840A0E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +106,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7724C5BF2565A5BB00EF38BF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7724C5D62565B06200EF38BF /* JobOpportunityListViewController.swift */,
+				7724C5DB2565B13700EF38BF /* MyJobOpportunityViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7724C5C02565A5C400EF38BF /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				7724C5D72565B06200EF38BF /* JobOpportunityListViewController.xib */,
+				7724C5DC2565B13700EF38BF /* MyJobOpportunityViewController.xib */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		7724C5DF2565BDEE00EF38BF /* HomeStrategy */ = {
+			isa = PBXGroup;
+			children = (
+				7724C5E02565BE4D00EF38BF /* HomeStrategy.swift */,
+			);
+			path = HomeStrategy;
+			sourceTree = "<group>";
+		};
 		772EE5CC25557DB100840A0E = {
 			isa = PBXGroup;
 			children = (
@@ -115,9 +157,10 @@
 			children = (
 				772EE6002555812F00840A0E /* Views */,
 				772EE5FD2555808900840A0E /* Controllers */,
-				772EE5FB2555804D00840A0E /* Repository */,
 				772EE5FA2555803F00840A0E /* Domain */,
+				772EE5FB2555804D00840A0E /* Repository */,
 				776AE28525645CBF008403F2 /* Helpers */,
+				7724C5DF2565BDEE00EF38BF /* HomeStrategy */,
 				772EE5D825557DB200840A0E /* AppDelegate.swift */,
 				772EE5DA25557DB200840A0E /* SceneDelegate.swift */,
 				772EE5E125557DB900840A0E /* Assets.xcassets */,
@@ -150,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				776AE288256496B1008403F2 /* LoginRepository.swift */,
+				7724C5B525655AF300EF38BF /* UserRepository.swift */,
+				7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -157,6 +202,7 @@
 		772EE5FD2555808900840A0E /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7724C5BF2565A5BB00EF38BF /* Home */,
 				776AE2722564496D008403F2 /* Register */,
 				772EE5FF255580DB00840A0E /* Login */,
 			);
@@ -174,6 +220,7 @@
 		772EE6002555812F00840A0E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7724C5C02565A5C400EF38BF /* Home */,
 				776AE2712564495A008403F2 /* Register */,
 				772EE6012555813800840A0E /* Login */,
 			);
@@ -228,6 +275,7 @@
 			isa = PBXGroup;
 			children = (
 				776AE28625645CD7008403F2 /* DateHelper.swift */,
+				7724C5BD2565A47000EF38BF /* MockHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -340,6 +388,8 @@
 				776AE276256449B4008403F2 /* RegisterViewController.xib in Resources */,
 				776AE2702563F4C9008403F2 /* GoogleService-Info.plist in Resources */,
 				772EE5E225557DB900840A0E /* Assets.xcassets in Resources */,
+				7724C5D92565B06200EF38BF /* JobOpportunityListViewController.xib in Resources */,
+				7724C5DE2565B13700EF38BF /* MyJobOpportunityViewController.xib in Resources */,
 				772EE5E025557DB200840A0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,12 +472,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7724C5DD2565B13700EF38BF /* MyJobOpportunityViewController.swift in Sources */,
+				7724C5BE2565A47000EF38BF /* MockHelper.swift in Sources */,
+				7724C5B625655AF300EF38BF /* UserRepository.swift in Sources */,
 				772EE5DD25557DB200840A0E /* ViewController.swift in Sources */,
 				772EE5D925557DB200840A0E /* AppDelegate.swift in Sources */,
+				7724C5D82565B06200EF38BF /* JobOpportunityListViewController.swift in Sources */,
 				772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */,
+				7724C5E12565BE4D00EF38BF /* HomeStrategy.swift in Sources */,
 				776AE28225645613008403F2 /* Answer.swift in Sources */,
 				776AE27925644A4A008403F2 /* User.swift in Sources */,
 				776AE289256496B1008403F2 /* LoginRepository.swift in Sources */,
+				7724C5BC2565A20400EF38BF /* JobOpportunityRepository.swift in Sources */,
 				776AE27D256450C6008403F2 /* Candidate.swift in Sources */,
 				776AE275256449B4008403F2 /* RegisterViewController.swift in Sources */,
 				776AE284256456E5008403F2 /* Skill.swift in Sources */,
