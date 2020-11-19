@@ -28,4 +28,15 @@ public class JobOpportunityRepository {
     public func addJobOpportunity(job: JobOpportunity){
         self.jobList.append(job)
     }
+    
+    public func getJobList() -> [JobOpportunity]{
+        jobList
+    }
+    
+    public func getJobList(from company: Company) -> [JobOpportunity]{
+        return jobList.filter({$0.company.email == company.email})
+    }
+    public func getJobList(from cadidate: Candidate) -> [JobOpportunity]{
+        return jobList.filter({$0.answers[0].candidate.email == cadidate.email})
+    }
 }

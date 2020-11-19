@@ -82,6 +82,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UtK-Mq-e2a">
                                 <rect key="frame" x="150.66666666666666" y="832" width="112.99999999999997" height="30"/>
                                 <state key="normal" title="Entrar sem logar"/>
+                                <connections>
+                                    <action selector="continueWithoutLogginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OC5-5P-5kb"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Confira algumas de nossas oportunidades !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uTQ-f1-Mc6">
                                 <rect key="frame" x="41" y="803" width="332" height="21"/>

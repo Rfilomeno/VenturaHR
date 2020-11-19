@@ -49,6 +49,10 @@ class ViewController: UIViewController {
         self.present(alert, animated: true, completion: nil)
     }
    
+    @IBAction func continueWithoutLogginAction(_ sender: Any) {
+        let controller = JobOpportunityListViewController(nibName: "JobOpportunityListViewController", bundle: nil)
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
 }
 

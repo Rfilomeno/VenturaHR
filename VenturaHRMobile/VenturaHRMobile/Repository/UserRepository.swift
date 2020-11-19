@@ -11,6 +11,7 @@ import Foundation
 public class UserRepository {
     private var candidates: [Candidate]
     private var companys: [Company]
+    private var currentUser: User?
     
     static var shared: UserRepository = {
         let instance = UserRepository()
@@ -24,6 +25,12 @@ public class UserRepository {
         companys = [testCompany]
     }
     
+    public func setCurrentUser(user: User){
+        self.currentUser = user
+    }
+    public func getCurrentUser() -> User?{
+        return currentUser
+    }
     public func getUser(email: String) -> User?{
         if let user = self.candidates.first(where: {$0.email == email}) {
             return user

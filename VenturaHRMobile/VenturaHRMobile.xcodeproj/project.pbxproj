@@ -34,6 +34,8 @@
 		776AE284256456E5008403F2 /* Skill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE283256456E5008403F2 /* Skill.swift */; };
 		776AE28725645CD7008403F2 /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE28625645CD7008403F2 /* DateHelper.swift */; };
 		776AE289256496B1008403F2 /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 776AE288256496B1008403F2 /* LoginRepository.swift */; };
+		779C36A82566B1550004413E /* JobListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C36A62566B1550004413E /* JobListTableViewCell.swift */; };
+		779C36A92566B1550004413E /* JobListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779C36A72566B1550004413E /* JobListTableViewCell.xib */; };
 		F70D06301EF7E30AE4B08AD3 /* Pods_VenturaHRMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE9CF665029C01A8F6C5C5B /* Pods_VenturaHRMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		776AE283256456E5008403F2 /* Skill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Skill.swift; sourceTree = "<group>"; };
 		776AE28625645CD7008403F2 /* DateHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		776AE288256496B1008403F2 /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		779C36A62566B1550004413E /* JobListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobListTableViewCell.swift; sourceTree = "<group>"; };
+		779C36A72566B1550004413E /* JobListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobListTableViewCell.xib; sourceTree = "<group>"; };
 		8C60C195515793643D396249 /* Pods_VenturaHRMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenturaHRMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A8E21BDCDB8CC5D4653144 /* Pods-VenturaHRMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobileTests.release.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobileTests/Pods-VenturaHRMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC73530EA9ABE5AC60496050 /* Pods-VenturaHRMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobileTests/Pods-VenturaHRMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,7 +113,7 @@
 		7724C5BF2565A5BB00EF38BF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7724C5D62565B06200EF38BF /* JobOpportunityListViewController.swift */,
+				77D54F1225660E6E00E6547A /* JobOpportunityList */,
 				7724C5DB2565B13700EF38BF /* MyJobOpportunityViewController.swift */,
 			);
 			path = Home;
@@ -118,7 +122,7 @@
 		7724C5C02565A5C400EF38BF /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				7724C5D72565B06200EF38BF /* JobOpportunityListViewController.xib */,
+				77D54F1125660E4100E6547A /* JobOpportunityList */,
 				7724C5DC2565B13700EF38BF /* MyJobOpportunityViewController.xib */,
 			);
 			path = Home;
@@ -280,6 +284,40 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		77D54F1125660E4100E6547A /* JobOpportunityList */ = {
+			isa = PBXGroup;
+			children = (
+				77D54F1425660EBF00E6547A /* TableViewCell */,
+				7724C5D72565B06200EF38BF /* JobOpportunityListViewController.xib */,
+			);
+			path = JobOpportunityList;
+			sourceTree = "<group>";
+		};
+		77D54F1225660E6E00E6547A /* JobOpportunityList */ = {
+			isa = PBXGroup;
+			children = (
+				77D54F1325660EA700E6547A /* TableViewCell */,
+				7724C5D62565B06200EF38BF /* JobOpportunityListViewController.swift */,
+			);
+			path = JobOpportunityList;
+			sourceTree = "<group>";
+		};
+		77D54F1325660EA700E6547A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				779C36A62566B1550004413E /* JobListTableViewCell.swift */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		77D54F1425660EBF00E6547A /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				779C36A72566B1550004413E /* JobListTableViewCell.xib */,
+			);
+			path = TableViewCell;
+			sourceTree = "<group>";
+		};
 		CA91FB4C2ED29EDD5C8F678C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -390,6 +428,7 @@
 				772EE5E225557DB900840A0E /* Assets.xcassets in Resources */,
 				7724C5D92565B06200EF38BF /* JobOpportunityListViewController.xib in Resources */,
 				7724C5DE2565B13700EF38BF /* MyJobOpportunityViewController.xib in Resources */,
+				779C36A92566B1550004413E /* JobListTableViewCell.xib in Resources */,
 				772EE5E025557DB200840A0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,6 +526,7 @@
 				776AE27D256450C6008403F2 /* Candidate.swift in Sources */,
 				776AE275256449B4008403F2 /* RegisterViewController.swift in Sources */,
 				776AE284256456E5008403F2 /* Skill.swift in Sources */,
+				779C36A82566B1550004413E /* JobListTableViewCell.swift in Sources */,
 				776AE27B25644D4C008403F2 /* Company.swift in Sources */,
 				776AE28725645CD7008403F2 /* DateHelper.swift in Sources */,
 				776AE280256451D7008403F2 /* JobOpportunity.swift in Sources */,

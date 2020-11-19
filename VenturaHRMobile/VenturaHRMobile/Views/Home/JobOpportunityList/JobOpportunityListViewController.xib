@@ -9,6 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JobOpportunityListViewController" customModule="VenturaHRMobile" customModuleProvider="target">
             <connections>
+                <outlet property="jobOpportunityTableView" destination="Cod-Jz-DCu" id="Hgy-Cu-3JS"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,20 +18,24 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HOME" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="quo-wZ-c4U">
-                    <rect key="frame" x="149.5" y="429" width="115" height="48"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Cod-Jz-DCu">
+                    <rect key="frame" x="20" y="44" width="374" height="818"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="z65-ob-fIV"/>
+                        <outlet property="delegate" destination="-1" id="C3D-iH-aF3"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="quo-wZ-c4U" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="JIo-bS-nYW"/>
-                <constraint firstItem="quo-wZ-c4U" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="b0a-Ak-SkT"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Cod-Jz-DCu" secondAttribute="trailing" constant="20" id="0UD-nN-6bb"/>
+                <constraint firstItem="Cod-Jz-DCu" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="6Jn-Yp-IEY"/>
+                <constraint firstItem="Cod-Jz-DCu" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="qg9-6g-62O"/>
+                <constraint firstItem="Cod-Jz-DCu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="w79-Bn-Xmo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <point key="canvasLocation" x="133" y="108"/>
+            <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
         </view>
     </objects>
 </document>

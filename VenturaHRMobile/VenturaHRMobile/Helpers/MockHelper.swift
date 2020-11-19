@@ -17,10 +17,10 @@ public class MockHelper{
         let skill3 = Skill(name: "ingles", weight: 2)
         let skill4 = Skill(name: "PODs", weight: 3)
         let skillList = [skill1, skill2, skill3, skill4]
-        let job1 = JobOpportunity(company: company, description: "Analista de Sistemas", skills: skillList)
-        let job2 = JobOpportunity(company: company, description: "PO", skills: skillList)
-        let job3 = JobOpportunity(company: company, description: "Analista de requisitos", skills: skillList)
-        let job4 = JobOpportunity(company: company, description: "Agislista", skills: skillList)
+        let job1 = JobOpportunity(company: company, title: "Analista de Sistemas", description: "Descrição Analista de Sistemas", skills: skillList)
+        let job2 = JobOpportunity(company: company, title: "PO", description: "Descrição PO", skills: skillList)
+        let job3 = JobOpportunity(company: company, title: "Analista de requisitos", description: "Descrição Analista de requisitos", skills: skillList)
+        let job4 = JobOpportunity(company: company, title: "Agislista", description: "Descrição Agislista", skills: skillList)
         
         return [job1, job2, job3, job4]
     }
