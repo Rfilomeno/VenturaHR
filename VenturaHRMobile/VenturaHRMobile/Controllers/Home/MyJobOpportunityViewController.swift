@@ -16,5 +16,10 @@ class MyJobOpportunityViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func loggoffButtonAction(_ sender: Any) {
+        let repository = UserRepository.shared
+        repository.setCurrentUser(user: nil)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }

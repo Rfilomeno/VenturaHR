@@ -9,6 +9,7 @@ target 'VenturaHRMobile' do
   pod "Firebase/Auth"
   pod "Firebase/Firestore"
   pod "Firebase/Storage"
+  pod "DropDown"
 
   target 'VenturaHRMobileTests' do
     inherit! :search_paths

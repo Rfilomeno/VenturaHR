@@ -14,7 +14,7 @@ public class Skill{
     let name:String
     var description:String?
     let weight: Int
-    var candidateAnswer: Int?
+    var candidateAnswer: Int = 0
     
     init(name:String, weight: Int){
         self.id = UUID().uuidString

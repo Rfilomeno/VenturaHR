@@ -20,6 +20,11 @@ class ViewController: UIViewController {
         
         // Do any additional setup after loading the view.
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        emailField.text = ""
+        passwordField.text = ""
+    }
 
     @IBAction func LoginButtonAction(_ sender: Any) {
         let user = LoginRepository.proceedLogin(email: emailField.text ?? "", password: passwordField.text ?? "")

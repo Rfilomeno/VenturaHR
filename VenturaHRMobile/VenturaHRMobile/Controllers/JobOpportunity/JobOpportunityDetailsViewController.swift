@@ -66,6 +66,11 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
     @IBAction func applyButonAction(_ sender: Any) {
         if !(user?.type == .PF ? true : false){
             navigationController?.popToRootViewController(animated: true)
+        } else {
+            let modalViewController = AnswerModalViewController()
+            modalViewController.modalPresentationStyle = .formSheet
+            modalViewController.job = job
+            present(modalViewController, animated: true, completion: nil)
         }
     }
 }

@@ -13,17 +13,22 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
     @IBOutlet weak var jobOpportunityTableView: UITableView!
     private var jobList: [JobOpportunity]?
     private var avalibleJobList: [JobOpportunity]?
-
+    let repository = JobOpportunityRepository.shared
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Oportunidades abertas"
         self.jobOpportunityTableView.delegate = self
-        let repository = JobOpportunityRepository.shared
+        
         self.jobList = repository.getJobList()
         let nib = UINib.init(nibName: "JobListTableViewCell", bundle: nil)
         self.jobOpportunityTableView.register(nib, forCellReuseIdentifier: "jobCell")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.jobList = repository.getJobList()
+        jobOpportunityTableView.reloadData()
+    }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let unwrapedJobList = self.jobList else { return 0 }

@@ -24,11 +24,15 @@ public class UserRepository {
         companys = MockHelper.getCompanys()
     }
     
-    public func setCurrentUser(user: User){
+    public func setCurrentUser(user: User?){
         self.currentUser = user
     }
     public func getCurrentUser() -> User?{
         return currentUser
+    }
+    public func getCurrentCandidate() -> Candidate?{
+        let response = self.candidates.first(where: {$0.email == currentUser?.email})
+        return response
     }
     public func getUser(email: String) -> User?{
         if let user = self.candidates.first(where: {$0.email == email}) {

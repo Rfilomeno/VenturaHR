@@ -27,11 +27,20 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DHO-oa-COZ">
+                    <rect key="frame" x="180" y="543.5" width="54" height="30"/>
+                    <state key="normal" title="Loggoff"/>
+                    <connections>
+                        <action selector="loggoffButtonAction:" destination="-1" eventType="touchUpInside" id="AmJ-aA-w8d"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
+                <constraint firstItem="DHO-oa-COZ" firstAttribute="top" secondItem="DTM-dO-PRd" secondAttribute="bottom" constant="40" id="BaC-qn-ms9"/>
                 <constraint firstItem="DTM-dO-PRd" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="DEv-km-NUj"/>
                 <constraint firstItem="DTM-dO-PRd" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Wdy-o7-Ucq"/>
+                <constraint firstItem="DHO-oa-COZ" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="wTr-is-kst"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="107.8125"/>
