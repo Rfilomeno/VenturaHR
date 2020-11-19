@@ -19,10 +19,9 @@ public class UserRepository {
     }()
     
     private init(){
-        let testCandidate = Candidate(name: "Rodrigo Filomeno", email: "rm.filomeno@gmail.com", cpf: "123456", password: "123456")
-        let testCompany = Company(name: "Apple", email: "apple@apple.com", contactName: "Steave", cnpj: nil, password: "123456")
-        candidates = [testCandidate]
-        companys = [testCompany]
+        //MOCK
+        candidates = MockHelper.getCandidates()
+        companys = MockHelper.getCompanys()
     }
     
     public func setCurrentUser(user: User){

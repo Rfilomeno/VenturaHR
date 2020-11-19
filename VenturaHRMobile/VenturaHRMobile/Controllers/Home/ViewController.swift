@@ -24,6 +24,8 @@ class ViewController: UIViewController {
     @IBAction func LoginButtonAction(_ sender: Any) {
         let user = LoginRepository.proceedLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
         if let userLogged = user{
+            let repository = UserRepository.shared
+            repository.setCurrentUser(user: userLogged)
             let tabBar = HomeStrategy.getTabBar(for: userLogged)
             self.present(tabBar, animated: true)
         } else {

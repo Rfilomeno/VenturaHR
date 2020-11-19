@@ -42,5 +42,11 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
         return cell
     }
 
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let job = avalibleJobList?[indexPath.row] else { return }
+        let controller = JobOpportunityDetailsViewController(nibName: "JobOpportunityDetailsViewController", bundle: nil)
+        controller.job = job
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
         
 }
