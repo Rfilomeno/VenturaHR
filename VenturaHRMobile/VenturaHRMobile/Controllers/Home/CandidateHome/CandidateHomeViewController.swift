@@ -40,9 +40,7 @@ class CandidateHomeViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//            return 25
-//        }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
           
         return candidateJobsApplys?.count ?? 0
@@ -67,9 +65,7 @@ class CandidateHomeViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func loggoffButtonAction(_ sender: Any) {
-        let repository = UserRepository.shared
-        repository.setCurrentUser(user: nil)
-        self.dismiss(animated: true, completion: nil)
+        UserRepository.loggoff(context: self)
     }
 
 }

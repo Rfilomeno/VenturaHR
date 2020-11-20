@@ -40,6 +40,10 @@ public class JobOpportunityRepository {
         let jobsAnswered = jobList.filter({!($0.answers.isEmpty)})
         return jobsAnswered.filter({$0.answers[0].candidate.email == cadidate.email})
     }
+    public func getJobList(by company: Company) -> [JobOpportunity]{
+        
+        return jobList.filter({$0.company.email == company.email})
+    }
     
     public func addAnswerTo(job: JobOpportunity, answer: Answer){
         self.jobList.first(where: {$0.id == job.id})?.answers.append(answer)

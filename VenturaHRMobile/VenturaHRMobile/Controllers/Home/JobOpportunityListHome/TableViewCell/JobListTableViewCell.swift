@@ -14,7 +14,7 @@ class JobListTableViewCell: UITableViewCell {
     @IBOutlet weak var companyLabel: UILabel!
     @IBOutlet weak var expirationDateLabel: UILabel!
     @IBOutlet weak var answeredLabel: UILabel!
-    
+    public var cameFromCompanyHome = false
     
 
     override func awakeFromNib() {
@@ -35,6 +35,11 @@ class JobListTableViewCell: UITableViewCell {
         let repository = UserRepository.shared
         if let user = repository.getCurrentUser(){
             answeredLabel.isHidden = checkAnswered(job: job, user: user)
+        }
+        if cameFromCompanyHome{
+            answeredLabel.isHidden = false
+            let answeredNumber = job.answers.count
+            answeredLabel.text = String(answeredNumber) + (answeredNumber == 1 ? " resposta" : " respostas")
         }
         
     }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 public class UserRepository {
     private var candidates: [Candidate]
@@ -34,6 +35,10 @@ public class UserRepository {
         let response = self.candidates.first(where: {$0.email == currentUser?.email})
         return response
     }
+    public func getCurrentCompany() -> Company?{
+        let response = self.companys.first(where: {$0.email == currentUser?.email})
+        return response
+    }
     public func getUser(email: String) -> User?{
         if let user = self.candidates.first(where: {$0.email == email}) {
             return user
@@ -47,5 +52,10 @@ public class UserRepository {
         } else {
             self.companys.append(user as! Company)
         }
+    }
+    
+    static func loggoff(context: UIViewController){
+        shared.setCurrentUser(user: nil)
+        context.dismiss(animated: true, completion: nil)
     }
 }

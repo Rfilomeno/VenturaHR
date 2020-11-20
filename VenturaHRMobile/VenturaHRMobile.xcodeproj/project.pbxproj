@@ -14,6 +14,8 @@
 		77011B552566FA6000496002 /* AnswerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77011B532566FA6000496002 /* AnswerTableViewCell.xib */; };
 		77011B5A256731C100496002 /* CandidateHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77011B58256731C100496002 /* CandidateHomeViewController.swift */; };
 		77011B5B256731C100496002 /* CandidateHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77011B59256731C100496002 /* CandidateHomeViewController.xib */; };
+		771C788F2567D87E00E1FEF2 /* CompanyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C788D2567D87E00E1FEF2 /* CompanyHomeViewController.swift */; };
+		771C78902567D87E00E1FEF2 /* CompanyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */; };
 		7724C5B625655AF300EF38BF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5B525655AF300EF38BF /* UserRepository.swift */; };
 		7724C5BC2565A20400EF38BF /* JobOpportunityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */; };
 		7724C5BE2565A47000EF38BF /* MockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BD2565A47000EF38BF /* MockHelper.swift */; };
@@ -66,6 +68,8 @@
 		77011B532566FA6000496002 /* AnswerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AnswerTableViewCell.xib; sourceTree = "<group>"; };
 		77011B58256731C100496002 /* CandidateHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateHomeViewController.swift; sourceTree = "<group>"; };
 		77011B59256731C100496002 /* CandidateHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandidateHomeViewController.xib; sourceTree = "<group>"; };
+		771C788D2567D87E00E1FEF2 /* CompanyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHomeViewController.swift; sourceTree = "<group>"; };
+		771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyHomeViewController.xib; sourceTree = "<group>"; };
 		7724C5B525655AF300EF38BF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpportunityRepository.swift; sourceTree = "<group>"; };
 		7724C5BD2565A47000EF38BF /* MockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelper.swift; sourceTree = "<group>"; };
@@ -160,12 +164,43 @@
 			path = CadidateHome;
 			sourceTree = "<group>";
 		};
+		771C788B2567D83D00E1FEF2 /* CompanyHome */ = {
+			isa = PBXGroup;
+			children = (
+				771C788D2567D87E00E1FEF2 /* CompanyHomeViewController.swift */,
+			);
+			path = CompanyHome;
+			sourceTree = "<group>";
+		};
+		771C78912567D88600E1FEF2 /* CompanyHome */ = {
+			isa = PBXGroup;
+			children = (
+				771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */,
+			);
+			path = CompanyHome;
+			sourceTree = "<group>";
+		};
+		771C78922567E92000E1FEF2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		771C78932567E93300E1FEF2 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		7724C5BF2565A5BB00EF38BF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				771C788B2567D83D00E1FEF2 /* CompanyHome */,
 				77011B562567318800496002 /* CandidateHome */,
 				772EE5DC25557DB200840A0E /* ViewController.swift */,
-				77D54F1225660E6E00E6547A /* JobOpportunityList */,
+				77D54F1225660E6E00E6547A /* JobOpportunityListHome */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -173,8 +208,9 @@
 		7724C5C02565A5C400EF38BF /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				771C78912567D88600E1FEF2 /* CompanyHome */,
 				77011B57256731A000496002 /* CadidateHome */,
-				77D54F1125660E4100E6547A /* JobOpportunityList */,
+				77D54F1125660E4100E6547A /* JobOpportunityListHome */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -339,6 +375,7 @@
 		779C36AE2566BDEF0004413E /* JobOpportunity */ = {
 			isa = PBXGroup;
 			children = (
+				771C78932567E93300E1FEF2 /* Register */,
 				77011B4C2566F48600496002 /* Answer */,
 				779C36B42566CDA60004413E /* TableViewCell */,
 				779C36AF2566BE2F0004413E /* JobOpportunityDetailsViewController.swift */,
@@ -349,6 +386,7 @@
 		779C36B32566BE460004413E /* JobOpportunity */ = {
 			isa = PBXGroup;
 			children = (
+				771C78922567E92000E1FEF2 /* Register */,
 				77011B512566F52000496002 /* Answer */,
 				779C36B52566CDB30004413E /* TableViewCell */,
 				779C36B02566BE2F0004413E /* JobOpportunityDetailsViewController.xib */,
@@ -372,22 +410,22 @@
 			path = TableViewCell;
 			sourceTree = "<group>";
 		};
-		77D54F1125660E4100E6547A /* JobOpportunityList */ = {
+		77D54F1125660E4100E6547A /* JobOpportunityListHome */ = {
 			isa = PBXGroup;
 			children = (
 				77D54F1425660EBF00E6547A /* TableViewCell */,
 				7724C5D72565B06200EF38BF /* JobOpportunityListViewController.xib */,
 			);
-			path = JobOpportunityList;
+			path = JobOpportunityListHome;
 			sourceTree = "<group>";
 		};
-		77D54F1225660E6E00E6547A /* JobOpportunityList */ = {
+		77D54F1225660E6E00E6547A /* JobOpportunityListHome */ = {
 			isa = PBXGroup;
 			children = (
 				77D54F1325660EA700E6547A /* TableViewCell */,
 				7724C5D62565B06200EF38BF /* JobOpportunityListViewController.swift */,
 			);
-			path = JobOpportunityList;
+			path = JobOpportunityListHome;
 			sourceTree = "<group>";
 		};
 		77D54F1325660EA700E6547A /* TableViewCell */ = {
@@ -521,6 +559,7 @@
 				7724C5D92565B06200EF38BF /* JobOpportunityListViewController.xib in Resources */,
 				779C36A92566B1550004413E /* JobListTableViewCell.xib in Resources */,
 				779C36B22566BE2F0004413E /* JobOpportunityDetailsViewController.xib in Resources */,
+				771C78902567D87E00E1FEF2 /* CompanyHomeViewController.xib in Resources */,
 				772EE5E025557DB200840A0E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -612,6 +651,7 @@
 				77011B5A256731C100496002 /* CandidateHomeViewController.swift in Sources */,
 				77011B542566FA6000496002 /* AnswerTableViewCell.swift in Sources */,
 				7724C5D82565B06200EF38BF /* JobOpportunityListViewController.swift in Sources */,
+				771C788F2567D87E00E1FEF2 /* CompanyHomeViewController.swift in Sources */,
 				772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */,
 				7724C5E12565BE4D00EF38BF /* HomeStrategy.swift in Sources */,
 				776AE28225645613008403F2 /* Answer.swift in Sources */,
