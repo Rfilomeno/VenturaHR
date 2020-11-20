@@ -78,9 +78,7 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 }))
             alert.addAction(UIAlertAction(title: "cancelar", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            
-            
-            
+
         }
     }
     

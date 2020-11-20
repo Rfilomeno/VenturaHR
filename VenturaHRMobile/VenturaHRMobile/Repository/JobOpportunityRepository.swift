@@ -57,5 +57,10 @@ public class JobOpportunityRepository {
     public func removeJobOpportunity(job: JobOpportunity){
         jobList.removeAll(where: {$0.id == job.id})
     }
-    
+    public func removeCandidateAnswer(on job: JobOpportunity){
+        let repository = UserRepository.shared
+        if let candidate = repository.getCurrentCandidate(){
+            jobList.filter({$0.id == job.id}).first?.answers.removeAll(where: {$0.candidate.email == candidate.email})
+        }
+    }
 }
