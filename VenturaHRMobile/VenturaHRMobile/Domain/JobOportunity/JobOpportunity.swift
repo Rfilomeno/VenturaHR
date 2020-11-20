@@ -33,4 +33,8 @@ public class JobOpportunity {
         self.expirationDate = DateHelper.getExpirationDate()
     }
     
+    public func filterSkills(by text: String) -> Bool{
+        let result = self.skills.filter({$0.name.uppercased().contains(text.uppercased())})
+        return !result.isEmpty
+    }
 }

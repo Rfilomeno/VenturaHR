@@ -14,6 +14,11 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
     private var jobList: [JobOpportunity]?
     private var avalibleJobList: [JobOpportunity]?
     let repository = JobOpportunityRepository.shared
+    let searchController = UISearchController(searchResultsController: nil)
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,16 +28,26 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
         self.jobList = repository.getJobList()
         let nib = UINib.init(nibName: "JobListTableViewCell", bundle: nil)
         self.jobOpportunityTableView.register(nib, forCellReuseIdentifier: "jobCell")
+        setupSearch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.jobList = repository.getJobList()
+        guard let unwrapedJobList = self.jobList else { return }
+        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid})
         jobOpportunityTableView.reloadData()
     }
 
+    private func setupSearch(){
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Busca por Habilidade ou Vaga"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let unwrapedJobList = self.jobList else { return 0 }
-        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid})
+        
         return avalibleJobList?.count ?? 0
     }
     
@@ -54,4 +69,26 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
         self.navigationController?.pushViewController(controller, animated: true)
     }
         
+}
+
+extension JobOpportunityListViewController: UISearchResultsUpdating{
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        self.jobList = repository.getJobList()
+        guard let unwrapedJobList = self.jobList else { return }
+        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid})
+        if let searchText = searchBar.text {
+            let result = unwrapedJobList.filter({($0.title.uppercased().contains(searchText.uppercased())) || ($0.filterSkills(by: searchText))})
+            if !isSearchBarEmpty{
+                self.avalibleJobList = result
+                jobOpportunityTableView.reloadData()
+            } else {
+                jobOpportunityTableView.reloadData()
+            }
+        }
+    }
+    
+    
+
+    
 }
