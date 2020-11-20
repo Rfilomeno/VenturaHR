@@ -95,8 +95,8 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
     }
 }
 
-extension JobOpportunityDetailsViewController:AnswerModalViewControllerProtocol{
-    func returnFromJobApplication() {
+extension JobOpportunityDetailsViewController:ModalViewControllerProtocol{
+    func returnFromModal() {
         let jobRepository = JobOpportunityRepository.shared
         if let candidateSkills = jobRepository.getCandidateAnswer(for: job!){
             self.skillList = candidateSkills.skills

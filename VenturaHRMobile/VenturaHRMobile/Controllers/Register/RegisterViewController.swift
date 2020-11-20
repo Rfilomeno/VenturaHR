@@ -8,14 +8,6 @@
 
 import UIKit
 
-protocol RegisterViewControllerProtocol: NSObjectProtocol  {
-    func returnFromEdit()
-}
-
-extension RegisterViewControllerProtocol {
-    func returnFromEdit() {}
-}
-
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -35,7 +27,7 @@ class RegisterViewController: UIViewController {
     
     public var editMode = false
     
-    weak var delegate: RegisterViewControllerProtocol?
+    weak var delegate: ModalViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,7 +129,7 @@ class RegisterViewController: UIViewController {
             candidate.address = addressField.text
             repository.addUser(user: candidate)
         }
-        self.delegate?.returnFromEdit()
+        self.delegate?.returnFromModal()
         self.dismiss(animated: true, completion: nil)
     }
     

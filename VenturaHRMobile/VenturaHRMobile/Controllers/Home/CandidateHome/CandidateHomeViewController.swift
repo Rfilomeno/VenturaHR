@@ -80,8 +80,8 @@ class CandidateHomeViewController: UIViewController, UITableViewDelegate, UITabl
 
 }
 
-extension CandidateHomeViewController: RegisterViewControllerProtocol {
-    func returnFromEdit(){
+extension CandidateHomeViewController: ModalViewControllerProtocol {
+    func returnFromModal(){
         candidate = userRepository.getCurrentCandidate()
         self.setupView()
     }

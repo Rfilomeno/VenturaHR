@@ -16,6 +16,8 @@
 		77011B5B256731C100496002 /* CandidateHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 77011B59256731C100496002 /* CandidateHomeViewController.xib */; };
 		771C788F2567D87E00E1FEF2 /* CompanyHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C788D2567D87E00E1FEF2 /* CompanyHomeViewController.swift */; };
 		771C78902567D87E00E1FEF2 /* CompanyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */; };
+		771C7896256817A900E1FEF2 /* RegisterJobModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C7894256817A900E1FEF2 /* RegisterJobModalViewController.swift */; };
+		771C7897256817A900E1FEF2 /* RegisterJobModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771C7895256817A900E1FEF2 /* RegisterJobModalViewController.xib */; };
 		7724C5B625655AF300EF38BF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5B525655AF300EF38BF /* UserRepository.swift */; };
 		7724C5BC2565A20400EF38BF /* JobOpportunityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */; };
 		7724C5BE2565A47000EF38BF /* MockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BD2565A47000EF38BF /* MockHelper.swift */; };
@@ -70,6 +72,8 @@
 		77011B59256731C100496002 /* CandidateHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandidateHomeViewController.xib; sourceTree = "<group>"; };
 		771C788D2567D87E00E1FEF2 /* CompanyHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanyHomeViewController.swift; sourceTree = "<group>"; };
 		771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyHomeViewController.xib; sourceTree = "<group>"; };
+		771C7894256817A900E1FEF2 /* RegisterJobModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterJobModalViewController.swift; sourceTree = "<group>"; };
+		771C7895256817A900E1FEF2 /* RegisterJobModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterJobModalViewController.xib; sourceTree = "<group>"; };
 		7724C5B525655AF300EF38BF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpportunityRepository.swift; sourceTree = "<group>"; };
 		7724C5BD2565A47000EF38BF /* MockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelper.swift; sourceTree = "<group>"; };
@@ -183,6 +187,7 @@
 		771C78922567E92000E1FEF2 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				771C7895256817A900E1FEF2 /* RegisterJobModalViewController.xib */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 		771C78932567E93300E1FEF2 /* Register */ = {
 			isa = PBXGroup;
 			children = (
+				771C7894256817A900E1FEF2 /* RegisterJobModalViewController.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -551,6 +557,7 @@
 				772EE5E525557DB900840A0E /* LaunchScreen.storyboard in Resources */,
 				77011B5B256731C100496002 /* CandidateHomeViewController.xib in Resources */,
 				776AE276256449B4008403F2 /* RegisterViewController.xib in Resources */,
+				771C7897256817A900E1FEF2 /* RegisterJobModalViewController.xib in Resources */,
 				776AE2702563F4C9008403F2 /* GoogleService-Info.plist in Resources */,
 				77011B552566FA6000496002 /* AnswerTableViewCell.xib in Resources */,
 				77011B502566F4FF00496002 /* AnswerModalViewController.xib in Resources */,
@@ -650,6 +657,7 @@
 				779C36B12566BE2F0004413E /* JobOpportunityDetailsViewController.swift in Sources */,
 				77011B5A256731C100496002 /* CandidateHomeViewController.swift in Sources */,
 				77011B542566FA6000496002 /* AnswerTableViewCell.swift in Sources */,
+				771C7896256817A900E1FEF2 /* RegisterJobModalViewController.swift in Sources */,
 				7724C5D82565B06200EF38BF /* JobOpportunityListViewController.swift in Sources */,
 				771C788F2567D87E00E1FEF2 /* CompanyHomeViewController.swift in Sources */,
 				772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */,

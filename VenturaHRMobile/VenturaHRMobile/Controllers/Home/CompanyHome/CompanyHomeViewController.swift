@@ -27,6 +27,7 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
         self.company = userRepository.getCurrentCompany()
         let nib = UINib.init(nibName: "JobListTableViewCell", bundle: nil)
         self.companyJobsPublishedTableView.register(nib, forCellReuseIdentifier: "jobCell")
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -67,7 +68,10 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func publishNewJob(_ sender: Any) {
-        
+        let modalViewController = RegisterJobModalViewController()
+        modalViewController.delegate = self
+        modalViewController.modalPresentationStyle = .formSheet
+        present(modalViewController, animated: true, completion: nil)
     }
     
     
@@ -86,9 +90,10 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
 }
 
-extension CompanyHomeViewController: RegisterViewControllerProtocol {
-    func returnFromEdit(){
+extension CompanyHomeViewController: ModalViewControllerProtocol {
+    func returnFromModal(){
         company = userRepository.getCurrentCompany()
         self.setupView()
     }
 }
+

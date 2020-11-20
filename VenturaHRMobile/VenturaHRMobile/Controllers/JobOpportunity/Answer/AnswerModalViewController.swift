@@ -9,12 +9,12 @@
 import UIKit
 import DropDown
 
-protocol AnswerModalViewControllerProtocol: NSObjectProtocol  {
-    func returnFromJobApplication()
+protocol ModalViewControllerProtocol: NSObjectProtocol  {
+    func returnFromModal()
 }
 
-extension AnswerModalViewControllerProtocol {
-    func returnFromJobApplication() {}
+extension ModalViewControllerProtocol {
+    func returnFromModal() {}
 }
 
 class AnswerModalViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -27,7 +27,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
     var job: JobOpportunity?
     let dropDown = DropDown()
     
-    weak var delegate: AnswerModalViewControllerProtocol?
+    weak var delegate: ModalViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,7 +79,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
          let answer = Answer(candidate: candidate, skills: skillList)
          jobRepository.addAnswerTo(job: job!, answer: answer)
         }
-        delegate?.returnFromJobApplication()
+        delegate?.returnFromModal()
         self.dismiss(animated: true, completion: nil)
     }
     
