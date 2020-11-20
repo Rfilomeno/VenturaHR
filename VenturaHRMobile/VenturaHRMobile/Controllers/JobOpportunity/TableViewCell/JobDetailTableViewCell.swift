@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 class JobDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var skillTitleLabel: UILabel!
@@ -28,5 +30,11 @@ class JobDetailTableViewCell: UITableViewCell {
         self.skillTitleLabel.text = skill.name
         self.answerLabel.isHidden = true
     }
-    
+    public func setupApplyedCell(skill: Skill){
+        self.skillTitleLabel.text = skill.name
+        let skillDescription = ["Sem Conhecimento", "Júnior", "Pleno", "Senior", "Mestre Jedi"]
+        self.answerLabel.text = skillDescription[skill.candidateAnswer]
+        self.answerLabel.isHidden = false
+    }
+   
 }

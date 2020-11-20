@@ -21,9 +21,10 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
     @IBOutlet weak var skillsTableView: UITableView!
     
     private var user: User?
-    private var userRepository = UserRepository.shared
+    private let userRepository = UserRepository.shared
     var job: JobOpportunity?
     private var skillList: [Skill]?
+    private var candidateHasApplied = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,14 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
         let nib = UINib.init(nibName: "JobDetailTableViewCell", bundle: nil)
         self.skillsTableView.register(nib, forCellReuseIdentifier: "jobDetailCell")
         self.skillList = job?.skills
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        let jobRepository = JobOpportunityRepository.shared
+        if let candidateSkills = jobRepository.getCandidateAnswer(for: job!){
+            self.skillList = candidateSkills.skills
+            candidateHasApplied = true
+        }
         setupView()
     }
     
@@ -46,6 +55,12 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
             self.applyButton.backgroundColor = .lightGray
             self.applyButton.setTitle("Realizar Login", for: .normal)
         }
+        if candidateHasApplied {
+            self.applyButton.backgroundColor = .systemGreen
+            self.applyButton.setTitle("Vaga já Respondida", for: .normal)
+            self.applyButton.isEnabled = false
+        }
+        skillsTableView.reloadData()
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -57,9 +72,13 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
       }
       
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-          let cell = tableView.dequeueReusableCell(withIdentifier: "jobDetailCell", for: indexPath) as! JobDetailTableViewCell
-          guard let skill = skillList?[indexPath.row] else { return cell}
-          cell.setupCell(skill: skill)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "jobDetailCell", for: indexPath) as! JobDetailTableViewCell
+        guard let skill = skillList?[indexPath.row] else { return cell}
+        if candidateHasApplied {
+            cell.setupApplyedCell(skill: skill)
+        } else{
+            cell.setupCell(skill: skill)
+        }
           return cell
       }
 
@@ -68,9 +87,21 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
             navigationController?.popToRootViewController(animated: true)
         } else {
             let modalViewController = AnswerModalViewController()
+            modalViewController.delegate = self
             modalViewController.modalPresentationStyle = .formSheet
             modalViewController.job = job
             present(modalViewController, animated: true, completion: nil)
         }
+    }
+}
+
+extension JobOpportunityDetailsViewController:AnswerModalViewControllerProtocol{
+    func returnFromJobApplication() {
+        let jobRepository = JobOpportunityRepository.shared
+        if let candidateSkills = jobRepository.getCandidateAnswer(for: job!){
+            self.skillList = candidateSkills.skills
+            candidateHasApplied = true
+        }
+        setupView()
     }
 }

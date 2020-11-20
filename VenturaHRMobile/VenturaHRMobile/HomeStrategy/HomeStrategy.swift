@@ -14,9 +14,9 @@ public class HomeStrategy{
     public static func getTabBar(for user:User) -> UITabBarController{
         if (user.type == .PJ){
             let vc1 = UINavigationController(rootViewController: JobOpportunityListViewController(nibName: "JobOpportunityListViewController", bundle: nil))
-            let vc2 = UINavigationController(rootViewController: MyJobOpportunityViewController(nibName: "MyJobOpportunityViewController", bundle: nil))
-            vc1.title = "Home"
-            vc2.title = "New"
+            let vc2 = UINavigationController(rootViewController: CandidateHomeViewController(nibName: "CandidateHomeViewController", bundle: nil))
+            vc1.title = "Vagas"
+            vc2.title = "Empresa"
 
             let tabViewController = UITabBarController()
             tabViewController.setViewControllers([vc1, vc2], animated: false)
@@ -33,9 +33,9 @@ public class HomeStrategy{
             return tabViewController
         } else {
             let vc1 = UINavigationController(rootViewController: JobOpportunityListViewController(nibName: "JobOpportunityListViewController", bundle: nil))
-            let vc2 = UINavigationController(rootViewController: MyJobOpportunityViewController(nibName: "MyJobOpportunityViewController", bundle: nil))
-            vc1.title = "Home"
-            vc2.title = "New"
+            let vc2 = UINavigationController(rootViewController: CandidateHomeViewController(nibName: "CandidateHomeViewController", bundle: nil))
+            vc1.title = "Oportunidades"
+            vc2.title = "Usuário"
 
             let tabViewController = UITabBarController()
             tabViewController.setViewControllers([vc1, vc2], animated: false)

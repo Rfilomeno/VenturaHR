@@ -37,11 +37,18 @@ public class JobOpportunityRepository {
         return jobList.filter({$0.company.email == company.email})
     }
     public func getJobList(from cadidate: Candidate) -> [JobOpportunity]{
-        return jobList.filter({$0.answers[0].candidate.email == cadidate.email})
+        let jobsAnswered = jobList.filter({!($0.answers.isEmpty)})
+        return jobsAnswered.filter({$0.answers[0].candidate.email == cadidate.email})
     }
     
     public func addAnswerTo(job: JobOpportunity, answer: Answer){
         self.jobList.first(where: {$0.id == job.id})?.answers.append(answer)
+    }
+    
+    public func getCandidateAnswer(for job: JobOpportunity) -> Answer?{
+        let repository = UserRepository.shared
+        guard let candidate = repository.getCurrentCandidate() else {return nil}
+        return job.answers.filter({$0.candidate.email == candidate.email}).first
     }
     
 }

@@ -17,8 +17,13 @@ public class MockHelper{
         let skill3 = Skill(name: "ingles", weight: 2)
         let skill4 = Skill(name: "PODs", weight: 3)
         let skillList = [skill1, skill2, skill3, skill4]
+        skill1.candidateAnswer = 4
+        skill2.candidateAnswer = 3
+        skill3.candidateAnswer = 1
+        skill4.candidateAnswer = 2
+        let answeredSkill = [skill1, skill2, skill3, skill4]
         guard let candidate = MockHelper.getCandidates().first else {return []}
-        let answer = Answer(candidate: candidate, skills: skillList)
+        let answer = Answer(candidate: candidate, skills: answeredSkill)
         let job1 = JobOpportunity(company: company, title: "Analista de Sistemas", description: "Descrição Analista de Sistemas", skills: skillList)
         job1.answers = [answer]
         let job2 = JobOpportunity(company: company, title: "PO", description: "Descrição PO", skills: skillList)
