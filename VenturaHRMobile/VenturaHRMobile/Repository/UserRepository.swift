@@ -48,8 +48,10 @@ public class UserRepository {
     
     public func addUser(user: User){
         if (user.type == .PF){
+            candidates.removeAll(where: {$0.email == user.email})
             self.candidates.append(user as! Candidate)
         } else {
+            companys.removeAll(where: {$0.email == user.email})
             self.companys.append(user as! Company)
         }
     }

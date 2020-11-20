@@ -30,11 +30,11 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.companyJobsPublished = jobRepository.getJobList(by: company!)
         setupView()
     }
 
     private func setupView(){
+        self.companyJobsPublished = jobRepository.getJobList(by: company!)
         companyNameLabel.text = company?.name
         contactNameLabel.text = company?.contactName
         emailLabel.text = company?.email
@@ -72,11 +72,23 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBAction func editButtonAction(_ sender: Any) {
-        
+        let modalViewController = RegisterViewController()
+        modalViewController.delegate = self
+        modalViewController.modalPresentationStyle = .formSheet
+        modalViewController.isCompany = true
+        modalViewController.editMode = true
+        present(modalViewController, animated: true, completion: nil)
     }
     
     @IBAction func loggoffButtonAction(_ sender: Any) {
         UserRepository.loggoff(context: self)
     }
     
+}
+
+extension CompanyHomeViewController: RegisterViewControllerProtocol {
+    func returnFromEdit(){
+        company = userRepository.getCurrentCompany()
+        self.setupView()
+    }
 }

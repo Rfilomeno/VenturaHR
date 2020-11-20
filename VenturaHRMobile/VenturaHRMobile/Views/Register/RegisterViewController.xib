@@ -20,6 +20,8 @@
                 <outlet property="nameLabel" destination="ONB-6h-Cz9" id="xsz-5e-FFx"/>
                 <outlet property="passorwdField" destination="ntP-TD-IdZ" id="5Kk-f7-elg"/>
                 <outlet property="phoneField" destination="QbV-le-YbD" id="fiZ-y1-Q2F"/>
+                <outlet property="registerButton" destination="byk-vy-2aq" id="4BN-th-PMv"/>
+                <outlet property="titleLabel" destination="Ykk-Gq-vd6" id="18W-mW-dJ6"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

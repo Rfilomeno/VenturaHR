@@ -25,19 +25,24 @@ class CandidateHomeViewController: UIViewController, UITableViewDelegate, UITabl
     override func viewDidLoad() {
         super.viewDidLoad()
         self.candidate = userRepository.getCurrentCandidate()
-        self.candidateJobsApplys = jobRepository.getJobList(from: candidate!)
         let nib = UINib.init(nibName: "JobListTableViewCell", bundle: nil)
         self.cadidateJobApplysTableView.register(nib, forCellReuseIdentifier: "jobCell")
         setupView()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        
+        setupView()
+    }
+    
     private func setupView(){
+        self.candidateJobsApplys = jobRepository.getJobList(from: candidate!)
         candidateNameLabel.text = candidate?.name
         emailLabel.text = candidate?.email
         phoneLabel.text = candidate?.phone
         cpfLabel.text = candidate?.cpf
         adressLabel.text = candidate?.address
-        
+        cadidateJobApplysTableView.reloadData()
     }
     
 
@@ -61,11 +66,23 @@ class CandidateHomeViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func editButtonAction(_ sender: Any) {
-        
+        let modalViewController = RegisterViewController()
+        modalViewController.delegate = self
+        modalViewController.modalPresentationStyle = .formSheet
+        modalViewController.isCompany = false
+        modalViewController.editMode = true
+        present(modalViewController, animated: true, completion: nil)
     }
     
     @IBAction func loggoffButtonAction(_ sender: Any) {
         UserRepository.loggoff(context: self)
     }
 
+}
+
+extension CandidateHomeViewController: RegisterViewControllerProtocol {
+    func returnFromEdit(){
+        candidate = userRepository.getCurrentCandidate()
+        self.setupView()
+    }
 }

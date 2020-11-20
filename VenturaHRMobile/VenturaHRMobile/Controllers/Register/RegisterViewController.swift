@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol RegisterViewControllerProtocol: NSObjectProtocol  {
+    func returnFromEdit()
+}
+
+extension RegisterViewControllerProtocol {
+    func returnFromEdit() {}
+}
+
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -21,13 +29,21 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var contactField: UITextField!
     @IBOutlet weak var passorwdField: UITextField!
     @IBOutlet weak var confirmPassowrdField: UITextField!
-    
+    @IBOutlet weak var registerButton: UIButton!
+    let repository = UserRepository.shared
     public var isCompany = false
+    
+    public var editMode = false
+    
+    weak var delegate: RegisterViewControllerProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupView()
+        if editMode {
+            setupEditMode()
+        }
     }
 
     private func setupView(){
@@ -38,8 +54,13 @@ class RegisterViewController: UIViewController {
             contactField.isHidden = false
         }
     }
+    
+    
     @IBAction func registerButtonAction(_ sender: Any) {
-        if isCompany {
+        if editMode {
+            editUser()
+            return
+        } else if isCompany {
             registerCompany()
         } else {
             registerCandidate()
@@ -51,7 +72,6 @@ class RegisterViewController: UIViewController {
         company.phone = phoneField.text ?? ""
         company.address = addressField.text ?? ""
         
-        let repository = UserRepository.shared
         repository.addUser(user: company)
         self.navigationController?.popViewController(animated: true)
     }
@@ -61,9 +81,64 @@ class RegisterViewController: UIViewController {
         candidate.phone = phoneField.text ?? ""
         candidate.address = addressField.text ?? ""
         
-        let repository = UserRepository.shared
         repository.addUser(user: candidate)
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    //MARK: EditMode
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    private func setupEditMode(){
+        titleLabel.text = "Editar dados"
+        registerButton.setTitle("Salvar", for: .normal)
+        emailField.isEnabled = false
+        emailField.backgroundColor = .lightGray
+        passorwdField.isEnabled = false
+        passorwdField.backgroundColor = .lightGray
+        confirmPassowrdField.isEnabled = false
+        confirmPassowrdField.backgroundColor = .lightGray
+        if isCompany{
+            let company = repository.getCurrentCompany()
+            nameField.text = company?.name
+            emailField.text = company?.email
+            cpfField.text = company?.cnpj
+            phoneField.text = company?.phone
+            addressField.text = company?.address
+            contactField.text = company?.contactName
+            passorwdField.text = company?.password
+            confirmPassowrdField.text = company?.password
+        } else {
+            let candidate = repository.getCurrentCandidate()
+            nameField.text = candidate?.name
+            emailField.text = candidate?.email
+            cpfField.text = candidate?.cpf
+            phoneField.text = candidate?.phone
+            addressField.text = candidate?.address
+            passorwdField.text = candidate?.password
+            confirmPassowrdField.text = candidate?.password
+        }
+        
+    }
+    
+    private func editUser(){
+        if let company = repository.getCurrentCompany(){
+            company.name = nameField.text!
+            company.contactName = contactField.text!
+            company.cnpj = cpfField.text
+            company.phone = phoneField.text
+            company.address = addressField.text
+            repository.addUser(user: company)
+        }
+        if let candidate = repository.getCurrentCandidate(){
+            candidate.name = nameField.text!
+            candidate.cpf = cpfField.text
+            candidate.phone = phoneField.text
+            candidate.address = addressField.text
+            repository.addUser(user: candidate)
+        }
+        self.delegate?.returnFromEdit()
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
