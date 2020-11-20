@@ -54,5 +54,8 @@ public class JobOpportunityRepository {
         guard let candidate = repository.getCurrentCandidate() else {return nil}
         return job.answers.filter({$0.candidate.email == candidate.email}).first
     }
+    public func removeJobOpportunity(job: JobOpportunity){
+        jobList.removeAll(where: {$0.id == job.id})
+    }
     
 }

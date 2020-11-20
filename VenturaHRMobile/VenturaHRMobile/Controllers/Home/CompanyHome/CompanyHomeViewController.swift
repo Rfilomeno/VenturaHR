@@ -65,6 +65,24 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.pushViewController(controller, animated: true)
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            
+            let alert = UIAlertController(title: "Tem certeza?", message: "Essa ação irá cancelar a publicação da vaga e, consequentemente, todas as candidaturas.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Sim", style: .destructive, handler: { action in
+                guard let job = self.companyJobsPublished?[indexPath.row] else { return }
+                self.jobRepository.removeJobOpportunity(job: job)
+                self.companyJobsPublished?.removeAll(where: {$0.id == job.id})
+                tableView.deleteRows(at: [indexPath], with: .fade)
+                self.setupView()
+                }))
+            alert.addAction(UIAlertAction(title: "cancelar", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+            
+            
+        }
+    }
     
     
     @IBAction func publishNewJob(_ sender: Any) {
