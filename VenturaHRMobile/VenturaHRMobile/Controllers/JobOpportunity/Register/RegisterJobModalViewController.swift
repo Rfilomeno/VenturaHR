@@ -16,6 +16,8 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var skillNameField: UITextField!
     @IBOutlet weak var skillWeightLabel: UILabel!
     @IBOutlet weak var skillWeightSlider: UISlider!
+    @IBOutlet weak var pmdLabel: UILabel!
+    @IBOutlet weak var pmdSlider: UISlider!
     @IBOutlet weak var addSkillTableView: UITableView!
     @IBOutlet weak var addSkillButton: UIButton!
     private var skillList: [Skill] = []
@@ -35,6 +37,11 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
         sender.setValue(sender.value.rounded(), animated: true)
         skillWeightLabel.text = "\(Int(sender.value))"
     }
+    @IBAction func pmdSliderAction(_ sender: UISlider) {
+        sender.setValue(sender.value.rounded(), animated: true)
+        pmdLabel.text = "\(Int(sender.value))"
+    }
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
             return 25
@@ -63,11 +70,13 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func addSkillButtonAction(_ sender: Any) {
-        let skill = Skill(name: skillNameField.text ?? "", weight: Int(skillWeightSlider.value.rounded()))
+        let skill = Skill(name: skillNameField.text ?? "", weight: Double(Int(skillWeightSlider.value.rounded())), pmd: Double(Int(pmdSlider.value.rounded())))
         skillList.append(skill)
         skillNameField.text = ""
         skillWeightSlider.setValue(1, animated: true)
         skillWeightLabel.text = "1"
+        pmdSlider.setValue(1, animated: true)
+        pmdLabel.text = "1"
         addSkillTableView.reloadData()
     }
     @IBAction func publishButtonAction(_ sender: Any) {

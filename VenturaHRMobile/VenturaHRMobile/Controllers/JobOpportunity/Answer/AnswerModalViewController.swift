@@ -73,7 +73,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
             dropDown.selectionAction = { [weak self] (index: Int, item: String) in
               guard let _ = self else { return }
                 cell.skillValueLabel.text = item
-                self?.skillListCopy[indexPath.row].candidateAnswer = index
+                self?.skillListCopy[indexPath.row].candidateAnswer = Double(index+1)
             }
           } 
     }

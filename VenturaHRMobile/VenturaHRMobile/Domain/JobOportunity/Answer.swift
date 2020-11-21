@@ -14,12 +14,32 @@ public class Answer{
     let candidate:Candidate
     let skills:[Skill]
     var answerDate: String
-    var candidateScore: Int {
-        var result = 0
+    var candidateScore: Double {
+        var result: Double = 0
+        var weights: Double = 0
         for skill in skills {
+            weights += skill.weight
             result += (skill.candidateAnswer * skill.weight)
         }
-        return result
+        return (result/weights)
+    }
+    var minScore: Double {
+        var weights: Double = 0
+        var pmd: Double = 0
+        for skill in skills {
+            weights += skill.weight
+            pmd += skill.PMD * skill.weight
+        }
+        return pmd/weights
+    }
+    var gotMinScore: Bool {
+        var haveMandatorySkills = true
+        for skill in skills {
+            if !skill.haveMandatory {
+             return false
+            }
+        }
+        return candidateScore >= minScore && haveMandatorySkills
     }
     
     init(candidate:Candidate, skills:[Skill]){

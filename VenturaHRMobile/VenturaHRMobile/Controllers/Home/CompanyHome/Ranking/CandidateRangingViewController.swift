@@ -16,9 +16,11 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var candidatePhoneLabel: UILabel!
     @IBOutlet weak var candidateCpfLabel: UILabel!
     @IBOutlet weak var candidateAdressLabel: UILabel!
+    @IBOutlet weak var pmdLabel: UILabel!
     
     public var job: JobOpportunity!
     var answers: [Answer]?
+    var selectedAnswer: Answer?
     
     
     
@@ -26,6 +28,7 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         self.answers = job.answers
+        self.pmdLabel.text = String(format: "%.2f", job.answers[0].minScore)
         answers = answers?.sorted {$0.candidateScore > $1.candidateScore}
         let nib = UINib.init(nibName: "AnswerTableViewCell", bundle: nil)
         self.rankingTableView.register(nib, forCellReuseIdentifier: "answerSkillCell")
@@ -50,10 +53,14 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
           let cell = tableView.dequeueReusableCell(withIdentifier: "answerSkillCell", for: indexPath) as! AnswerTableViewCell
           guard let answer = answers?[indexPath.row] else { return cell}
         cell.titleLabel.text = "\(indexPath.row + 1)º - \(answer.candidate.name)"
-        cell.skillValueLabel.text = "Score: \(answer.candidateScore)"
+        cell.skillValueLabel.text = "Score: \(String(format: "%.2f", answer.candidateScore))"
+        if !answer.gotMinScore{
+            cell.skillValueLabel.textColor = .red
+        }
           return cell
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.selectedAnswer = answers?[indexPath.row]
         guard let candidate = answers?[indexPath.row].candidate else { return }
         self.cadidateNameLabel.text = candidate.name
         self.candidateCpfLabel.text = candidate.cpf
@@ -62,6 +69,23 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
         self.candidateAdressLabel.text = candidate.address
         self.candidateView.isHidden = false
     }
+    
+    @IBAction func answersButtonAction(_ sender: Any) {
+        let alert = UIAlertController(title: "Respostas do Candidato", message: nil, preferredStyle: .actionSheet)
+        guard let candidateSkills = self.selectedAnswer?.skills else {return}
+        for skill in candidateSkills {
+            var gotRequiriment: UIAlertAction.Style = .default
+            var symbol = "✅"
+            if !skill.haveMandatory{
+                gotRequiriment = .destructive
+                symbol = "🚫"
+            }
+            alert.addAction(UIAlertAction(title: "\(skill.name) - \(skill.textAnswer) - \(symbol)", style: gotRequiriment, handler: nil))
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    
     @IBAction func closeButtonAction(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }

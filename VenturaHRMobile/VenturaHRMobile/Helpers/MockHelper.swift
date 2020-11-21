@@ -12,15 +12,15 @@ public class MockHelper{
     
     public static func getJobs() -> [JobOpportunity]{
         guard let company = MockHelper.getCompanys().first else {return []}
-        let skill1 = Skill(name: "iOS", weight: 5)
-        let skill2 = Skill(name: "Git", weight: 1)
-        let skill3 = Skill(name: "ingles", weight: 2)
-        let skill4 = Skill(name: "PODs", weight: 3)
+        let skill1 = Skill(name: "iOS", weight: 5, pmd: 5)
+        let skill2 = Skill(name: "Git", weight: 1, pmd: 2)
+        let skill3 = Skill(name: "ingles", weight: 2, pmd: 3)
+        let skill4 = Skill(name: "PODs", weight: 3, pmd: 5)
         let skillList = [skill1, skill2, skill3, skill4]
         skill1.candidateAnswer = 4
-        skill2.candidateAnswer = 3
-        skill3.candidateAnswer = 1
-        skill4.candidateAnswer = 2
+        skill2.candidateAnswer = 5
+        skill3.candidateAnswer = 5
+        skill4.candidateAnswer = 4
         let answeredSkill = [skill1, skill2, skill3, skill4]
         guard let candidate = MockHelper.getCandidates().first else {return []}
         let answer = Answer(candidate: candidate, skills: answeredSkill)
