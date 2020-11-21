@@ -8,6 +8,14 @@
 
 import UIKit
 
+protocol validateProtocol: NSObjectProtocol {
+    func validateFields() -> Bool
+}
+
+extension validateProtocol {
+    func validateFields() -> Bool { return false }
+}
+
 class RegisterViewController: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
@@ -49,13 +57,15 @@ class RegisterViewController: UIViewController {
     
     
     @IBAction func registerButtonAction(_ sender: Any) {
-        if editMode {
-            editUser()
-            return
-        } else if isCompany {
-            registerCompany()
-        } else {
-            registerCandidate()
+        if validateFields(){
+            if editMode {
+                editUser()
+                return
+            } else if isCompany {
+                registerCompany()
+            } else {
+                registerCandidate()
+            }
         }
     }
     
@@ -133,4 +143,83 @@ class RegisterViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+}
+
+extension RegisterViewController: validateProtocol {
+    
+    func validateFields() -> Bool {
+        var validator = true
+        if nameField.text?.isEmpty ?? true {
+            nameField.layer.borderWidth = 1
+            nameField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            nameField.layer.borderWidth = 0
+            nameField.layer.borderColor = UIColor.black.cgColor
+        }
+        if emailField.text?.isEmpty ?? true {
+            emailField.layer.borderWidth = 1
+            emailField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            emailField.layer.borderWidth = 0
+            emailField.layer.borderColor = UIColor.black.cgColor
+        }
+        if cpfField.text?.isEmpty ?? true {
+            cpfField.layer.borderWidth = 1
+            cpfField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            cpfField.layer.borderWidth = 0
+            cpfField.layer.borderColor = UIColor.black.cgColor
+        }
+        if phoneField.text?.isEmpty ?? true {
+            phoneField.layer.borderWidth = 1
+            phoneField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            phoneField.layer.borderWidth = 0
+            phoneField.layer.borderColor = UIColor.black.cgColor
+        }
+        if addressField.text?.isEmpty ?? true {
+            addressField.layer.borderWidth = 1
+            addressField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            addressField.layer.borderWidth = 0
+            addressField.layer.borderColor = UIColor.black.cgColor
+        }
+        if contactField.text?.isEmpty ?? true && isCompany {
+            contactField.layer.borderWidth = 1
+            contactField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            contactField.layer.borderWidth = 0
+            contactField.layer.borderColor = UIColor.black.cgColor
+        }
+        if passorwdField.text?.isEmpty ?? true {
+            passorwdField.layer.borderWidth = 1
+            passorwdField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            passorwdField.layer.borderWidth = 0
+            passorwdField.layer.borderColor = UIColor.black.cgColor
+        }
+        if confirmPassowrdField.text?.isEmpty ?? true {
+            confirmPassowrdField.layer.borderWidth = 1
+            confirmPassowrdField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            confirmPassowrdField.layer.borderWidth = 0
+            confirmPassowrdField.layer.borderColor = UIColor.black.cgColor
+        }
+        if (passorwdField.text != confirmPassowrdField.text) {
+            passorwdField.layer.borderWidth = 1
+            confirmPassowrdField.layer.borderWidth = 1
+            passorwdField.layer.borderColor = UIColor.red.cgColor
+            confirmPassowrdField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        }
+        return validator
+    }
 }

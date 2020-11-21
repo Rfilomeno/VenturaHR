@@ -16,54 +16,39 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Validade" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqz-pb-5U6">
-                        <rect key="frame" x="189" y="2" width="56" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szk-3q-Dji">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szk-3q-Dji">
                         <rect key="frame" x="16" y="2" width="33.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respondida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCh-EC-ZDa">
+                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Respondida" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jCh-EC-ZDa">
                         <rect key="frame" x="223" y="24" width="81" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" red="0.0" green="0.56284224989999998" blue="0.31881666180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Publicada por:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBr-sE-AQq">
-                        <rect key="frame" x="16" y="27" width="82" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Por:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBr-sE-AQq">
+                        <rect key="frame" x="16" y="27" width="23" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ds-DO-3k1">
-                        <rect key="frame" x="103" y="27" width="50" height="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Empresa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ds-DO-3k1">
+                        <rect key="frame" x="44" y="27" width="50" height="15"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ex. Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iAI-iR-fXO">
-                        <rect key="frame" x="250" y="2" width="54" height="17"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RBr-sE-AQq" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="2Wy-6W-Cde"/>
-                    <constraint firstAttribute="trailing" secondItem="iAI-iR-fXO" secondAttribute="trailing" constant="16" id="5MW-Yq-JZL"/>
                     <constraint firstItem="1ds-DO-3k1" firstAttribute="leading" secondItem="RBr-sE-AQq" secondAttribute="trailing" constant="5" id="66y-2T-Fny"/>
                     <constraint firstAttribute="bottom" secondItem="jCh-EC-ZDa" secondAttribute="bottom" constant="2" id="78t-Rd-G07"/>
                     <constraint firstItem="Szk-3q-Dji" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="7OW-4U-uHX"/>
-                    <constraint firstItem="iAI-iR-fXO" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="AYf-SY-N2c"/>
+                    <constraint firstItem="jCh-EC-ZDa" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1ds-DO-3k1" secondAttribute="trailing" constant="10" id="7RK-YX-Apm"/>
                     <constraint firstAttribute="bottom" secondItem="RBr-sE-AQq" secondAttribute="bottom" constant="2" id="X7N-G9-liw"/>
-                    <constraint firstItem="iAI-iR-fXO" firstAttribute="leading" secondItem="aqz-pb-5U6" secondAttribute="trailing" constant="5" id="cTg-vH-jyS"/>
                     <constraint firstItem="Szk-3q-Dji" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="efl-Kk-Z2B"/>
-                    <constraint firstItem="aqz-pb-5U6" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="2" id="l83-a2-j0Q"/>
                     <constraint firstAttribute="bottom" secondItem="1ds-DO-3k1" secondAttribute="bottom" constant="2" id="qWl-As-0pL"/>
                     <constraint firstAttribute="trailing" secondItem="jCh-EC-ZDa" secondAttribute="trailing" constant="16" id="taR-yI-2xp"/>
                 </constraints>
@@ -72,7 +57,6 @@
             <connections>
                 <outlet property="answeredLabel" destination="jCh-EC-ZDa" id="ZaB-el-yf5"/>
                 <outlet property="companyLabel" destination="1ds-DO-3k1" id="Wdq-Aw-hAB"/>
-                <outlet property="expirationDateLabel" destination="iAI-iR-fXO" id="DxG-f9-iJy"/>
                 <outlet property="titleLabel" destination="Szk-3q-Dji" id="Yw9-9P-dRk"/>
             </connections>
             <point key="canvasLocation" x="133" y="133"/>

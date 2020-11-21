@@ -80,13 +80,42 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
         addSkillTableView.reloadData()
     }
     @IBAction func publishButtonAction(_ sender: Any) {
-        guard let company = userRepository.getCurrentCompany() else {return}
-        let job = JobOpportunity(company: company, title: titleField.text ?? "", description: descriptionField.text ?? "", skills: skillList)
-        jobRepository.addJobOpportunity(job: job)
-        delegate?.returnFromModal()
-        self.dismiss(animated: true, completion: nil)
+        if validateFields(){
+            guard let company = userRepository.getCurrentCompany() else {return}
+            let job = JobOpportunity(company: company, title: titleField.text ?? "", description: descriptionField.text ?? "", skills: skillList)
+            jobRepository.addJobOpportunity(job: job)
+            delegate?.returnFromModal()
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     
 
+}
+
+extension RegisterJobModalViewController: validateProtocol{
+    func validateFields() -> Bool {
+        var validator = true
+        if titleField.text?.isEmpty ?? true {
+            titleField.layer.borderWidth = 1
+            titleField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            titleField.layer.borderWidth = 0
+        }
+        if descriptionField.text?.isEmpty ?? true {
+            descriptionField.layer.borderWidth = 1
+            descriptionField.layer.borderColor = UIColor.red.cgColor
+            validator = false
+        } else {
+            descriptionField.layer.borderWidth = 0
+        }
+        if skillList.isEmpty {
+            skillNameField.layer.borderWidth = 1
+            skillNameField.layer.borderColor = UIColor.red.cgColor
+        }else {
+            skillNameField.layer.borderWidth = 0
+        }
+        return validator
+    }
 }

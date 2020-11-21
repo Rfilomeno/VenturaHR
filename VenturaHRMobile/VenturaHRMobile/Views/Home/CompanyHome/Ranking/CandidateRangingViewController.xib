@@ -25,7 +25,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking de Candidatos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cht-vp-YLI">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ranking de Candidatos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cht-vp-YLI">
                     <rect key="frame" x="87" y="20" width="201.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <nil key="textColor"/>
@@ -55,7 +55,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email@email.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3OT-jL-8TU">
-                            <rect key="frame" x="67" y="81" width="134" height="21"/>
+                            <rect key="frame" x="67" y="80.5" width="134" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(99) 9999-9999" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEV-Se-a4P">
-                            <rect key="frame" x="72" y="110" width="129" height="21"/>
+                            <rect key="frame" x="72" y="109.5" width="129" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="999.999.999-99" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePW-EG-AVG">
-                            <rect key="frame" x="67" y="139" width="130" height="21"/>
+                            <rect key="frame" x="67" y="138.5" width="130" height="21"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -91,7 +91,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Rua. Maria da Flores" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HhS-Lc-mw9">
-                            <rect key="frame" x="67" y="168" width="260" height="20.5"/>
+                            <rect key="frame" x="67" y="167.5" width="260" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -102,14 +102,14 @@
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="José das Couves" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSx-wY-Cc4">
-                            <rect key="frame" x="67" y="52" width="130" height="21"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="José das Couves" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cSx-wY-Cc4">
+                            <rect key="frame" x="67" y="52" width="130" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g0t-Zg-f5k">
-                            <rect key="frame" x="131.5" y="196.5" width="72" height="30"/>
+                            <rect key="frame" x="131.5" y="196" width="72" height="30"/>
                             <state key="normal" title="Respostas"/>
                             <connections>
                                 <action selector="answersButtonAction:" destination="-1" eventType="touchUpInside" id="nP7-pP-Vgx"/>
@@ -130,6 +130,7 @@
                         <constraint firstItem="ePW-EG-AVG" firstAttribute="top" secondItem="hEV-Se-a4P" secondAttribute="bottom" constant="8" id="Qci-oa-Z0s"/>
                         <constraint firstItem="tXf-vw-sTj" firstAttribute="top" secondItem="D4D-6m-2yw" secondAttribute="bottom" constant="8" id="Ssj-qG-tgl"/>
                         <constraint firstItem="tXf-vw-sTj" firstAttribute="leading" secondItem="fYc-lb-ix8" secondAttribute="leading" constant="8" id="V68-Nw-nwu"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cSx-wY-Cc4" secondAttribute="trailing" constant="8" id="Wtd-7i-dCZ"/>
                         <constraint firstItem="g0t-Zg-f5k" firstAttribute="centerX" secondItem="fYc-lb-ix8" secondAttribute="centerX" id="a84-BB-jAQ"/>
                         <constraint firstItem="ci5-IF-Y2k" firstAttribute="top" secondItem="tXf-vw-sTj" secondAttribute="bottom" constant="8" id="aTA-NK-Mxl"/>
                         <constraint firstAttribute="trailing" secondItem="HhS-Lc-mw9" secondAttribute="trailing" constant="8" id="b08-bU-RKp"/>
@@ -177,6 +178,7 @@
                 <constraint firstItem="5Is-uv-6Jc" firstAttribute="top" secondItem="TT7-4G-zWf" secondAttribute="bottom" constant="10" id="ZzU-5L-UVe"/>
                 <constraint firstItem="cht-vp-YLI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="aJ7-FG-tEQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="8Le-8V-cD5" secondAttribute="trailing" constant="20" id="dIw-N8-Lsn"/>
+                <constraint firstItem="8Le-8V-cD5" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="cht-vp-YLI" secondAttribute="trailing" constant="20" id="dxS-1f-LkZ"/>
                 <constraint firstItem="TT7-4G-zWf" firstAttribute="top" secondItem="cht-vp-YLI" secondAttribute="bottom" constant="8" id="ff6-qd-4EZ"/>
                 <constraint firstItem="fYc-lb-ix8" firstAttribute="top" secondItem="5Is-uv-6Jc" secondAttribute="bottom" constant="10" id="gW2-TY-UrW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="fYc-lb-ix8" secondAttribute="trailing" constant="20" id="gfQ-jL-Mzp"/>

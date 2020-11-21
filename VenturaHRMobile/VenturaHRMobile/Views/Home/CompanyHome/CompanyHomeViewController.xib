@@ -158,8 +158,11 @@
                 <constraint firstItem="G6l-Pe-m3V" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="BGC-bY-J54"/>
                 <constraint firstItem="iUC-ON-A0N" firstAttribute="top" secondItem="cO9-T6-gax" secondAttribute="bottom" constant="25" id="BKk-Ce-IeQ"/>
                 <constraint firstItem="1Jy-pb-j9L" firstAttribute="leading" secondItem="G6l-Pe-m3V" secondAttribute="trailing" constant="39.5" id="BSZ-YC-oXN"/>
+                <constraint firstItem="iUC-ON-A0N" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="EqL-IH-Uby" secondAttribute="trailing" constant="10" id="GsC-wh-74c"/>
                 <constraint firstItem="iY5-fI-KI6" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="LMa-v6-ahM"/>
+                <constraint firstItem="mDy-Jr-wpf" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="bPZ-0F-Q2K" secondAttribute="trailing" constant="10" id="NSe-ag-XZw"/>
                 <constraint firstItem="JfJ-AG-hKs" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Rlr-LB-RNQ"/>
+                <constraint firstItem="fmr-cx-DOV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="1Jy-pb-j9L" secondAttribute="trailing" constant="10" id="SZS-c6-MKO"/>
                 <constraint firstItem="1Jy-pb-j9L" firstAttribute="top" secondItem="qwv-eF-DB9" secondAttribute="bottom" constant="8" id="TTU-Vu-ovY"/>
                 <constraint firstItem="mDy-Jr-wpf" firstAttribute="top" secondItem="fmr-cx-DOV" secondAttribute="bottom" constant="10" id="TZ4-sj-Oml"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="mDy-Jr-wpf" secondAttribute="trailing" constant="20" id="UHd-W5-yoI"/>
@@ -185,6 +188,7 @@
                 <constraint firstItem="FZf-WH-lR4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="vCR-Dg-Epc"/>
                 <constraint firstItem="qwv-eF-DB9" firstAttribute="top" secondItem="9In-eA-QnT" secondAttribute="bottom" constant="8" id="whJ-9B-dem"/>
                 <constraint firstItem="9In-eA-QnT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="wiA-R4-rTH"/>
+                <constraint firstItem="fmr-cx-DOV" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qwv-eF-DB9" secondAttribute="trailing" constant="10" id="yMd-Db-dPH"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="131.8840579710145" y="90.401785714285708"/>

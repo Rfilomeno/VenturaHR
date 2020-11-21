@@ -12,7 +12,7 @@ class JobListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
-    @IBOutlet weak var expirationDateLabel: UILabel!
+    //@IBOutlet weak var expirationDateLabel: UILabel!
     @IBOutlet weak var answeredLabel: UILabel!
     public var cameFromCompanyHome = false
     
@@ -31,7 +31,7 @@ class JobListTableViewCell: UITableViewCell {
     public func setupCell(job: JobOpportunity){
         titleLabel.text = job.title
         companyLabel.text = job.company.name
-        expirationDateLabel.text = job.expirationDate
+        //expirationDateLabel.text = job.expirationDate
         let repository = UserRepository.shared
         if let user = repository.getCurrentUser(){
             answeredLabel.isHidden = checkAnswered(job: job, user: user)
