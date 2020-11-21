@@ -37,4 +37,8 @@ public class JobOpportunity {
         let result = self.skills.filter({$0.name.uppercased().contains(text.uppercased())})
         return !result.isEmpty
     }
+    public func filterAnswer(candidate: Candidate) -> Bool{
+        let result = self.answers.filter({$0.candidate.email == candidate.email})
+           return !result.isEmpty
+       }
 }

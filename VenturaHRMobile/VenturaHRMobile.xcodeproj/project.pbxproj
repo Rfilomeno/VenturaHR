@@ -18,6 +18,8 @@
 		771C78902567D87E00E1FEF2 /* CompanyHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */; };
 		771C7896256817A900E1FEF2 /* RegisterJobModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C7894256817A900E1FEF2 /* RegisterJobModalViewController.swift */; };
 		771C7897256817A900E1FEF2 /* RegisterJobModalViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771C7895256817A900E1FEF2 /* RegisterJobModalViewController.xib */; };
+		771C789D2568867E00E1FEF2 /* CandidateRangingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771C789B2568867E00E1FEF2 /* CandidateRangingViewController.swift */; };
+		771C789E2568867E00E1FEF2 /* CandidateRangingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 771C789C2568867E00E1FEF2 /* CandidateRangingViewController.xib */; };
 		7724C5B625655AF300EF38BF /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5B525655AF300EF38BF /* UserRepository.swift */; };
 		7724C5BC2565A20400EF38BF /* JobOpportunityRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */; };
 		7724C5BE2565A47000EF38BF /* MockHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7724C5BD2565A47000EF38BF /* MockHelper.swift */; };
@@ -74,6 +76,8 @@
 		771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CompanyHomeViewController.xib; sourceTree = "<group>"; };
 		771C7894256817A900E1FEF2 /* RegisterJobModalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterJobModalViewController.swift; sourceTree = "<group>"; };
 		771C7895256817A900E1FEF2 /* RegisterJobModalViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterJobModalViewController.xib; sourceTree = "<group>"; };
+		771C789B2568867E00E1FEF2 /* CandidateRangingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateRangingViewController.swift; sourceTree = "<group>"; };
+		771C789C2568867E00E1FEF2 /* CandidateRangingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CandidateRangingViewController.xib; sourceTree = "<group>"; };
 		7724C5B525655AF300EF38BF /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		7724C5BB2565A20400EF38BF /* JobOpportunityRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobOpportunityRepository.swift; sourceTree = "<group>"; };
 		7724C5BD2565A47000EF38BF /* MockHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockHelper.swift; sourceTree = "<group>"; };
@@ -171,6 +175,7 @@
 		771C788B2567D83D00E1FEF2 /* CompanyHome */ = {
 			isa = PBXGroup;
 			children = (
+				771C789A2568865100E1FEF2 /* Ranking */,
 				771C788D2567D87E00E1FEF2 /* CompanyHomeViewController.swift */,
 			);
 			path = CompanyHome;
@@ -179,6 +184,7 @@
 		771C78912567D88600E1FEF2 /* CompanyHome */ = {
 			isa = PBXGroup;
 			children = (
+				771C789F2568868700E1FEF2 /* Ranking */,
 				771C788E2567D87E00E1FEF2 /* CompanyHomeViewController.xib */,
 			);
 			path = CompanyHome;
@@ -198,6 +204,22 @@
 				771C7894256817A900E1FEF2 /* RegisterJobModalViewController.swift */,
 			);
 			path = Register;
+			sourceTree = "<group>";
+		};
+		771C789A2568865100E1FEF2 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				771C789B2568867E00E1FEF2 /* CandidateRangingViewController.swift */,
+			);
+			path = Ranking;
+			sourceTree = "<group>";
+		};
+		771C789F2568868700E1FEF2 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				771C789C2568867E00E1FEF2 /* CandidateRangingViewController.xib */,
+			);
+			path = Ranking;
 			sourceTree = "<group>";
 		};
 		7724C5BF2565A5BB00EF38BF /* Home */ = {
@@ -561,6 +583,7 @@
 				776AE2702563F4C9008403F2 /* GoogleService-Info.plist in Resources */,
 				77011B552566FA6000496002 /* AnswerTableViewCell.xib in Resources */,
 				77011B502566F4FF00496002 /* AnswerModalViewController.xib in Resources */,
+				771C789E2568867E00E1FEF2 /* CandidateRangingViewController.xib in Resources */,
 				772EE5E225557DB900840A0E /* Assets.xcassets in Resources */,
 				779C36B92566CE490004413E /* JobDetailTableViewCell.xib in Resources */,
 				7724C5D92565B06200EF38BF /* JobOpportunityListViewController.xib in Resources */,
@@ -670,6 +693,7 @@
 				776AE27D256450C6008403F2 /* Candidate.swift in Sources */,
 				776AE275256449B4008403F2 /* RegisterViewController.swift in Sources */,
 				776AE284256456E5008403F2 /* Skill.swift in Sources */,
+				771C789D2568867E00E1FEF2 /* CandidateRangingViewController.swift in Sources */,
 				779C36A82566B1550004413E /* JobListTableViewCell.swift in Sources */,
 				776AE27B25644D4C008403F2 /* Company.swift in Sources */,
 				776AE28725645CD7008403F2 /* DateHelper.swift in Sources */,

@@ -25,7 +25,7 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
     var job: JobOpportunity?
     private var skillList: [Skill]?
     private var candidateHasApplied = false
-    
+    public var cameFromCompany = false
     override func viewDidLoad() {
         super.viewDidLoad()
         self.user = userRepository.getCurrentUser()
@@ -51,14 +51,22 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
         self.expirationDateLabel.text = job?.expirationDate
         self.descripitionLabel.text = job?.description
         self.expiredLabel.isHidden = (job?.stillValid ?? true)
-        if !(user?.type == .PF ? true : false){
+        if !(user?.type == .PF ? true : false) && !cameFromCompany{
             self.applyButton.backgroundColor = .lightGray
             self.applyButton.setTitle("Realizar Login", for: .normal)
         }
-        if candidateHasApplied {
+        if candidateHasApplied && !cameFromCompany{
             self.applyButton.backgroundColor = .systemGreen
             self.applyButton.setTitle("Vaga já Respondida", for: .normal)
             self.applyButton.isEnabled = false
+        }
+        if cameFromCompany {
+            self.applyButton.setTitle("Rank de candidatos", for: .normal)
+            self.applyButton.isHidden = false
+            if job?.answers.isEmpty ?? true {
+                self.applyButton.isEnabled = false
+                self.applyButton.backgroundColor = .lightGray
+            }
         }
         skillsTableView.reloadData()
     }
@@ -83,8 +91,13 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
       }
 
     @IBAction func applyButonAction(_ sender: Any) {
-        if !(user?.type == .PF ? true : false){
+        if !(user?.type == .PF ? true : false) && !cameFromCompany{
             navigationController?.popToRootViewController(animated: true)
+        } else if cameFromCompany {
+            let modalViewController = CandidateRangingViewController()
+            modalViewController.modalPresentationStyle = .formSheet
+            modalViewController.job = job
+            present(modalViewController, animated: true, completion: nil)
         } else {
             let modalViewController = AnswerModalViewController()
             modalViewController.delegate = self

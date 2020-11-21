@@ -24,6 +24,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
     @IBOutlet weak var answerSkillsTableView: UITableView!
     @IBOutlet weak var applyButton: UIButton!
     var skillList: [Skill]!
+    var skillListCopy: [Skill] = []
     var job: JobOpportunity?
     let dropDown = DropDown()
     
@@ -35,8 +36,13 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
         self.answerSkillsTableView.register(nib, forCellReuseIdentifier: "answerSkillCell")
         self.skillList = job?.skills ?? []
         setupView()
+        skillCopy()
     }
-
+    private func skillCopy(){
+        for skill in skillList {
+            skillListCopy.append(skill.copy() as! Skill)
+        }
+    }
     private func setupView(){
         self.jobTitleLabel.text = job?.title
         self.companyNameLabel.text = job?.company.name
@@ -67,7 +73,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
             dropDown.selectionAction = { [weak self] (index: Int, item: String) in
               guard let _ = self else { return }
                 cell.skillValueLabel.text = item
-                self?.skillList[indexPath.row].candidateAnswer = index
+                self?.skillListCopy[indexPath.row].candidateAnswer = index
             }
           } 
     }
@@ -76,7 +82,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
         let userRepository = UserRepository.shared
         let jobRepository = JobOpportunityRepository.shared
         if let candidate = userRepository.getCurrentCandidate(){
-         let answer = Answer(candidate: candidate, skills: skillList)
+         let answer = Answer(candidate: candidate, skills: skillListCopy)
          jobRepository.addAnswerTo(job: job!, answer: answer)
         }
         delegate?.returnFromModal()

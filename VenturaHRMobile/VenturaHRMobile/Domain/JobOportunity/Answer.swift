@@ -14,6 +14,13 @@ public class Answer{
     let candidate:Candidate
     let skills:[Skill]
     var answerDate: String
+    var candidateScore: Int {
+        var result = 0
+        for skill in skills {
+            result += (skill.candidateAnswer * skill.weight)
+        }
+        return result
+    }
     
     init(candidate:Candidate, skills:[Skill]){
         self.id = UUID().uuidString
@@ -22,6 +29,6 @@ public class Answer{
         self.answerDate = DateHelper.getCurrentDate()
         
     }
-    
+   
     
 }

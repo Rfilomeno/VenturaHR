@@ -35,7 +35,12 @@ public class MockHelper{
     
     public static func getCandidates() -> [Candidate]{
         let testCandidate = Candidate(name: "Rodrigo Filomeno", email: "rm.filomeno@gmail.com", cpf: "123456", password: "123456")
-        return [testCandidate]
+        testCandidate.address = "Rua Maria Amalia, 264"
+        testCandidate.phone = "(21) 99627-6007"
+        let testCandidate2 = Candidate(name: "Cláudio Filomeno Júnior", email: "cfilomeno@msn.com", cpf: "123456", password: "123456")
+        testCandidate2.address = "Rua do Piruca, 264"
+        testCandidate2.phone = "(21) 98848-1195"
+        return [testCandidate, testCandidate2]
         
     }
     public static func getCompanys() -> [Company]{

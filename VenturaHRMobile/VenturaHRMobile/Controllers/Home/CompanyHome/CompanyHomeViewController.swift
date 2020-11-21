@@ -62,6 +62,7 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
         guard let job = companyJobsPublished?[indexPath.row] else { return }
         let controller = JobOpportunityDetailsViewController(nibName: "JobOpportunityDetailsViewController", bundle: nil)
         controller.job = job
+        controller.cameFromCompany = true
         self.navigationController?.pushViewController(controller, animated: true)
     }
     

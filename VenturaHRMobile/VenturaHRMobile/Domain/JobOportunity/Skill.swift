@@ -8,7 +8,9 @@
 
 import Foundation
 
-public class Skill{
+public class Skill: NSCopying{
+    
+    
     
     let id:String
     let name:String
@@ -22,4 +24,7 @@ public class Skill{
         self.weight = weight
     }
     
+    public func copy(with zone: NSZone? = nil) -> Any {
+        return Skill(name: name, weight: weight)
+    }
 }
