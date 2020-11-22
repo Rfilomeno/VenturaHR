@@ -15,7 +15,7 @@ class JobListTableViewCell: UITableViewCell {
     //@IBOutlet weak var expirationDateLabel: UILabel!
     @IBOutlet weak var answeredLabel: UILabel!
     public var cameFromCompanyHome = false
-    
+    var repository = UserRepository.shared
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,8 +29,9 @@ class JobListTableViewCell: UITableViewCell {
     }
     
     public func setupCell(job: JobOpportunity){
+        let company = repository.getUser(email: job.companyEmail)
         titleLabel.text = job.title
-        companyLabel.text = job.company.name
+        companyLabel.text = company?.name
         //expirationDateLabel.text = job.expirationDate
         let repository = UserRepository.shared
         if let user = repository.getCurrentUser(){

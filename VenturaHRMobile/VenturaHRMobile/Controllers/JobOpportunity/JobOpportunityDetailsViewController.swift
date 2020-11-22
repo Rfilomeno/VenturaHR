@@ -44,9 +44,10 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
     }
     
     private func setupView(){
+        let company = userRepository.getUser(email: job?.companyEmail ?? "")
         self.applyButton.isHidden = (user?.type == .PJ ? true : false)
         self.titleLabel.text = job?.title
-        self.companyLabel.text = job?.company.name
+        self.companyLabel.text = company?.name
         self.publishDateLabel.text = job?.publicationDate
         self.expirationDateLabel.text = job?.expirationDate
         self.descripitionLabel.text = job?.description

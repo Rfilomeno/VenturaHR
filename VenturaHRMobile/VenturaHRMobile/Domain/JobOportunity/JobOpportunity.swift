@@ -11,7 +11,7 @@ import Foundation
 public class JobOpportunity {
     
     let id:String
-    let company:Company
+    let companyEmail:String
     var title: String
     var description:String
     var answers:[Answer]
@@ -21,10 +21,10 @@ public class JobOpportunity {
     var stillValid = true
     
     
-    init(company:Company, title: String, description:String, skills: [Skill]){
+    init(companyEmail:String, title: String, description:String, skills: [Skill]){
         
         self.id = UUID().uuidString
-        self.company = company
+        self.companyEmail = companyEmail
         self.title = title
         self.description = description
         self.answers = []

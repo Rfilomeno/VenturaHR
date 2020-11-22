@@ -34,7 +34,7 @@ public class JobOpportunityRepository {
     }
     
     public func getJobList(from company: Company) -> [JobOpportunity]{
-        return jobList.filter({$0.company.email == company.email})
+        return jobList.filter({$0.companyEmail == company.email})
     }
     public func getJobList(from cadidate: Candidate) -> [JobOpportunity]{
         let jobsAnswered = jobList.filter({!($0.answers.isEmpty)})
@@ -42,7 +42,7 @@ public class JobOpportunityRepository {
     }
     public func getJobList(by company: Company) -> [JobOpportunity]{
         
-        return jobList.filter({$0.company.email == company.email})
+        return jobList.filter({$0.companyEmail == company.email})
     }
     
     public func addAnswerTo(job: JobOpportunity, answer: Answer){

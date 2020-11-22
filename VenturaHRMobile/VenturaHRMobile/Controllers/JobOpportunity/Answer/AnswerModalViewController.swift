@@ -27,7 +27,7 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
     var skillListCopy: [Skill] = []
     var job: JobOpportunity?
     let dropDown = DropDown()
-    
+    let repository = UserRepository.shared
     weak var delegate: ModalViewControllerProtocol?
     
     override func viewDidLoad() {
@@ -44,8 +44,9 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
         }
     }
     private func setupView(){
+        let company = repository.getUser(email: job?.companyEmail ?? "")
         self.jobTitleLabel.text = job?.title
-        self.companyNameLabel.text = job?.company.name
+        self.companyNameLabel.text = company?.name
         self.skillList = job?.skills
     }
     

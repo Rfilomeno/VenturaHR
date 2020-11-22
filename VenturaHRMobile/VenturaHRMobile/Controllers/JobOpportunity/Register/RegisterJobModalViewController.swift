@@ -82,7 +82,7 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
     @IBAction func publishButtonAction(_ sender: Any) {
         if validateFields(){
             guard let company = userRepository.getCurrentCompany() else {return}
-            let job = JobOpportunity(company: company, title: titleField.text ?? "", description: descriptionField.text ?? "", skills: skillList)
+            let job = JobOpportunity(companyEmail: company.email, title: titleField.text ?? "", description: descriptionField.text ?? "", skills: skillList)
             jobRepository.addJobOpportunity(job: job)
             delegate?.returnFromModal()
             self.dismiss(animated: true, completion: nil)
