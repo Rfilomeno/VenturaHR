@@ -8,12 +8,15 @@
 
 import Foundation
 import UIKit
+import Firebase
+import FirebaseFirestore
+import FirebaseFirestoreSwift
 
 public class UserRepository {
     private var candidates: [Candidate]
     private var companys: [Company]
     private var currentUser: User?
-    
+    private var db = Firestore.firestore()
     static var shared: UserRepository = {
         let instance = UserRepository()
         return instance
@@ -63,6 +66,34 @@ public class UserRepository {
     }
     
     //MARK: Firebase create user
+    public func createFirebaseUserLogin(user: User){
+        var createdUser = user
+        Auth.auth().createUser(withEmail: user.email!, password: user.password!) { authResult, error in
+            if error != nil{
+                return
+            }else{
+                if let uid = authResult?.user.uid {
+                    createdUser.id = uid
+                    user.type == .PF ? (self.createFirebaseCandidate(createdUser as! Candidate)) : (self.createFirebaseCompany(createdUser as! Company))
+                }
+            }
+            
+        }
+    }
     
-    
+    public func createFirebaseCandidate(_ user: Candidate){
+        do {
+            try db.collection("candidate").document("\(user.id!)").setData(from: user)
+        } catch let error {
+            print("Deu ruim salvando user: \(error)")
+        }
+        
+    }
+    public func createFirebaseCompany(_ user: Company){
+        do {
+            try db.collection("company").document("\(user.id!)").setData(from: user)
+        } catch let error {
+            print("Deu ruim salvando user: \(error)")
+        }
+    }
 }

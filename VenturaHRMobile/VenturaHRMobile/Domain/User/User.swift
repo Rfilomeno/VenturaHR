@@ -9,18 +9,22 @@
 import Foundation
 
 
-public enum UserType {
-    case PF, PJ
+public enum UserType: String, Codable {
+    
+    case PF = "PF"
+    case PJ = "PJ"
 }
 
 public protocol User {
     
-    var id: String {get set}
-    var name: String {get set}
-    var email: String {get set}
+    var id: String? {get set}
+    var name: String? {get set}
+    var email: String? {get set}
     var phone: String? {get set}
     var address: String? {get set}
-    var type: UserType {get set}
-    var password: String {get set}
+    var type: UserType? {get set}
+    var password: String? {get set}
+    
+    
     
 }

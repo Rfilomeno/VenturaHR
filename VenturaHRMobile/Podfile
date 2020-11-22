@@ -8,7 +8,8 @@ target 'VenturaHRMobile' do
   # Pods for VenturaHRMobile
   pod "Firebase/Auth"
   pod "Firebase/Firestore"
-  pod "Firebase/Storage"
+  pod 'Firebase/Core'
+  pod 'FirebaseFirestoreSwift'
   pod "DropDown"
 
   target 'VenturaHRMobileTests' do

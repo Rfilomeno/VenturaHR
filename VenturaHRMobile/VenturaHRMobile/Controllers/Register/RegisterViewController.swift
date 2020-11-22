@@ -70,7 +70,12 @@ class RegisterViewController: UIViewController {
     }
     
     private func registerCompany(){
-        let company = Company(name: nameField.text ?? "", email: emailField.text ?? "", contactName: contactField.text ?? "", cnpj: cpfField.text ?? "", password: passorwdField.text ?? "")
+        let company = Company()
+        company.name = nameField.text ?? ""
+        company.email = emailField.text ?? ""
+        company.contactName = contactField.text ?? ""
+        company.cnpj = cpfField.text ?? ""
+        company.password = passorwdField.text ?? ""
         company.phone = phoneField.text ?? ""
         company.address = addressField.text ?? ""
         
@@ -79,7 +84,11 @@ class RegisterViewController: UIViewController {
     }
     
     private func registerCandidate(){
-        let candidate = Candidate(name: nameField.text ?? "", email: emailField.text ?? "", cpf: cpfField.text ?? "", password: passorwdField.text ?? "")
+        let candidate = Candidate()
+        candidate.name = nameField.text ?? ""
+        candidate.email = emailField.text ?? ""
+        candidate.cpf = cpfField.text ?? ""
+        candidate.password = passorwdField.text ?? ""
         candidate.phone = phoneField.text ?? ""
         candidate.address = addressField.text ?? ""
         
