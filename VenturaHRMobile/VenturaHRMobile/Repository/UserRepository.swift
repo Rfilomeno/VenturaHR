@@ -39,6 +39,7 @@ public class UserRepository {
         let response = self.companys.first(where: {$0.email == currentUser?.email})
         return response
     }
+    
     public func getUser(email: String) -> User?{
         if let user = self.candidates.first(where: {$0.email == email}) {
             return user
@@ -60,4 +61,8 @@ public class UserRepository {
         shared.setCurrentUser(user: nil)
         context.dismiss(animated: true, completion: nil)
     }
+    
+    //MARK: Firebase create user
+    
+    
 }

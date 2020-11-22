@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import Firebase
+
 
 public class LoginRepository{
     
-    
+    //MARK: Mock
     public static func proceedLogin(email:String, password:String) -> User? {
         
         let repository = UserRepository.shared
@@ -20,8 +22,17 @@ public class LoginRepository{
         }
         
         return nil
-        
+
+    }
+    
+    //MARK: Firebase Create userLogin
+    
+    public static func createFirebaseLogin(email:String, password:String) {
+//        Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
+//            <#code#>
+//        }
         
     }
+    
     
 }

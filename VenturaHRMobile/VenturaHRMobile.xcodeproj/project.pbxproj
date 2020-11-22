@@ -229,7 +229,6 @@
 			children = (
 				771C788B2567D83D00E1FEF2 /* CompanyHome */,
 				77011B562567318800496002 /* CandidateHome */,
-				772EE5DC25557DB200840A0E /* ViewController.swift */,
 				77D54F1225660E6E00E6547A /* JobOpportunityListHome */,
 			);
 			path = Home;
@@ -334,6 +333,7 @@
 		772EE5FF255580DB00840A0E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				772EE5DC25557DB200840A0E /* ViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";

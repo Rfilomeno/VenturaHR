@@ -39,21 +39,23 @@ class ViewController: UIViewController {
         
     }
     
+    func presentRegisterController(forCompany: Bool){
+         let controller = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        controller.isCompany = forCompany
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
     
     @IBAction func newAccountButtonAction(_ sender: Any) {
         let alert = UIAlertController(title: "Qual tipo de Conta deseja criar?", message: nil, preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: "PJ", style: .default, handler: { action in
-        let controller = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-            controller.isCompany = true
-        self.navigationController?.pushViewController(controller, animated: true)
+        alert.addAction(UIAlertAction(title: "Empresa", style: .default, handler: { action in
+            self.presentRegisterController(forCompany: true)
         }))
-        alert.addAction(UIAlertAction(title: "PF", style: .default, handler: { action in
-        let controller = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
-        controller.isCompany = false
-        self.navigationController?.pushViewController(controller, animated: true)
+        alert.addAction(UIAlertAction(title: "Candidato", style: .default, handler: { action in
+            self.presentRegisterController(forCompany: false)
         }))
         alert.addAction(UIAlertAction(title: "cancelar", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
+        
     }
    
     @IBAction func continueWithoutLogginAction(_ sender: Any) {
