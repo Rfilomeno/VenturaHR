@@ -83,7 +83,9 @@ class AnswerModalViewController: UIViewController, UITableViewDataSource, UITabl
         let userRepository = UserRepository.shared
         let jobRepository = JobOpportunityRepository.shared
         if let candidate = userRepository.getCurrentCandidate(){
-         let answer = Answer(candidate: candidate, skills: skillListCopy)
+         let answer = Answer()
+        answer.candidateEmail = candidate.email
+        answer.skills = skillListCopy
          jobRepository.addAnswerTo(job: job!, answer: answer)
         }
         delegate?.returnFromModal()

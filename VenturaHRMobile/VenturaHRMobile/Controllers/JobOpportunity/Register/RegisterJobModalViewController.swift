@@ -55,7 +55,7 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
         let cell = tableView.dequeueReusableCell(withIdentifier: "jobDetailCell", for: indexPath) as! JobDetailTableViewCell
         let skill = skillList[indexPath.row]
         cell.skillTitleLabel.text = skill.name
-        cell.answerLabel.text = "Peso: \(skill.weight)"
+        cell.answerLabel.text = "Peso: \(skill.weight!)"
           return cell
       }
     
@@ -70,7 +70,11 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func addSkillButtonAction(_ sender: Any) {
-        let skill = Skill(name: skillNameField.text ?? "", weight: Double(Int(skillWeightSlider.value.rounded())), pmd: Double(Int(pmdSlider.value.rounded())))
+        let skill = Skill()
+        skill.name = skillNameField.text ?? ""
+        skill.weight = Double(Int(skillWeightSlider.value.rounded()))
+        skill.PMD = Double(Int(pmdSlider.value.rounded()))
+        
         skillList.append(skill)
         skillNameField.text = ""
         skillWeightSlider.setValue(1, animated: true)
@@ -78,11 +82,17 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
         pmdSlider.setValue(1, animated: true)
         pmdLabel.text = "1"
         addSkillTableView.reloadData()
+        validateFields()
     }
     @IBAction func publishButtonAction(_ sender: Any) {
         if validateFields(){
             guard let company = userRepository.getCurrentCompany() else {return}
-            let job = JobOpportunity(companyEmail: company.email!, title: titleField.text ?? "", description: descriptionField.text ?? "", skills: skillList)
+            let job = JobOpportunity()
+            job.companyEmail = company.email!
+            job.title = titleField.text ?? ""
+            job.description = descriptionField.text ?? ""
+            job.skills = skillList
+            
             jobRepository.addJobOpportunity(job: job)
             delegate?.returnFromModal()
             self.dismiss(animated: true, completion: nil)

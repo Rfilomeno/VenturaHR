@@ -79,8 +79,12 @@ class RegisterViewController: UIViewController {
         company.phone = phoneField.text ?? ""
         company.address = addressField.text ?? ""
         
-        repository.addUser(user: company)
-        self.navigationController?.popViewController(animated: true)
+//        repository.addUser(user: company)
+        if repository.createFirebaseUserLogin(user: company) {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.alertEmail()
+        }
     }
     
     private func registerCandidate(){
@@ -92,8 +96,12 @@ class RegisterViewController: UIViewController {
         candidate.phone = phoneField.text ?? ""
         candidate.address = addressField.text ?? ""
         
-        repository.addUser(user: candidate)
-        self.navigationController?.popViewController(animated: true)
+//        repository.addUser(user: candidate)
+        if repository.createFirebaseUserLogin(user: candidate) {
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            self.alertEmail()
+        }
     }
     
     //MARK: EditMode
@@ -151,6 +159,15 @@ class RegisterViewController: UIViewController {
         self.delegate?.returnFromModal()
         self.dismiss(animated: true, completion: nil)
     }
+    
+    
+    func alertEmail(){
+        
+        let alert = UIAlertController(title: "Email já registrado", message: "O Email já está registrado em nossa base de dados.", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     
 }
 

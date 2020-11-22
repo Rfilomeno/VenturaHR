@@ -21,6 +21,7 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
     public var job: JobOpportunity!
     var answers: [Answer]?
     var selectedAnswer: Answer?
+    let userRepository = UserRepository.shared
     
     
     
@@ -28,7 +29,7 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
     override func viewDidLoad() {
         super.viewDidLoad()
         self.answers = job.answers
-        self.pmdLabel.text = String(format: "%.2f", job.answers[0].minScore)
+        self.pmdLabel.text = String(format: "%.2f", job.answers![0].minScore)
         answers = answers?.sorted {$0.candidateScore > $1.candidateScore}
         let nib = UINib.init(nibName: "AnswerTableViewCell", bundle: nil)
         self.rankingTableView.register(nib, forCellReuseIdentifier: "answerSkillCell")
@@ -52,7 +53,8 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
           let cell = tableView.dequeueReusableCell(withIdentifier: "answerSkillCell", for: indexPath) as! AnswerTableViewCell
           guard let answer = answers?[indexPath.row] else { return cell}
-        cell.titleLabel.text = "\(indexPath.row + 1)º - \(answer.candidate.name)"
+        guard let user = userRepository.getUser(email: answer.candidateEmail!) else {return cell}
+        cell.titleLabel.text = "\(indexPath.row + 1)º - \(user.name!)"
         cell.skillValueLabel.text = "Score: \(String(format: "%.2f", answer.candidateScore))"
         if !answer.gotMinScore{
             cell.skillValueLabel.textColor = .red
@@ -61,12 +63,13 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
       }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.selectedAnswer = answers?[indexPath.row]
-        guard let candidate = answers?[indexPath.row].candidate else { return }
-        self.cadidateNameLabel.text = candidate.name
-        self.candidateCpfLabel.text = candidate.cpf
-        self.candidateEmailLabel.text = candidate.email
-        self.candidatePhoneLabel.text = candidate.phone
-        self.candidateAdressLabel.text = candidate.address
+        guard let candidateEmail = answers?[indexPath.row].candidateEmail else { return }
+        guard let candidate = userRepository.getUser(email: candidateEmail) as! Candidate? else {return}
+        self.cadidateNameLabel.text = candidate.name!
+        self.candidateCpfLabel.text = candidate.cpf!
+        self.candidateEmailLabel.text = candidate.email!
+        self.candidatePhoneLabel.text = candidate.phone!
+        self.candidateAdressLabel.text = candidate.address!
         self.candidateView.isHidden = false
     }
     
@@ -80,7 +83,7 @@ class CandidateRangingViewController: UIViewController, UITableViewDelegate, UIT
                 gotRequiriment = .destructive
                 symbol = "🚫"
             }
-            alert.addAction(UIAlertAction(title: "\(skill.name) - \(skill.textAnswer) - \(symbol)", style: gotRequiriment, handler: nil))
+            alert.addAction(UIAlertAction(title: "\(skill.name!) - \(skill.textAnswer) - \(symbol)", style: gotRequiriment, handler: nil))
         }
         self.present(alert, animated: true, completion: nil)
     }

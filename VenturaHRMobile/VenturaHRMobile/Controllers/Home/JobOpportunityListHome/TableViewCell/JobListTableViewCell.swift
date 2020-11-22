@@ -29,25 +29,25 @@ class JobListTableViewCell: UITableViewCell {
     }
     
     public func setupCell(job: JobOpportunity){
-        let company = repository.getUser(email: job.companyEmail)
+        let company = repository.getUser(email: job.companyEmail!)
         titleLabel.text = job.title
         companyLabel.text = company?.name
         //expirationDateLabel.text = job.expirationDate
         let repository = UserRepository.shared
         if let user = repository.getCurrentUser(){
-            answeredLabel.isHidden = checkAnswered(job: job, user: user)
+            answeredLabel.isHidden = checkNotAnswered(job: job, user: user)
         }
         if cameFromCompanyHome{
             answeredLabel.isHidden = false
-            let answeredNumber = job.answers.count
+            let answeredNumber = job.answers!.count
             answeredLabel.text = String(answeredNumber) + (answeredNumber == 1 ? " resposta" : " respostas")
         }
         
     }
     
-    private func checkAnswered(job: JobOpportunity, user: User) -> Bool{
-        let answers = job.answers
-        return !(answers.contains(where: {$0.candidate.email == user.email}))
+    private func checkNotAnswered(job: JobOpportunity, user: User) -> Bool{
+        guard let answers = job.answers else {return true}
+        return !(answers.contains(where: {$0.candidateEmail == user.email}))
     }
     
 }

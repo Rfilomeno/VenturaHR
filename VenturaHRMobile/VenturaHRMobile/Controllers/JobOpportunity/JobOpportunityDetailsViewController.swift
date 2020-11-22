@@ -64,7 +64,7 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
         if cameFromCompany {
             self.applyButton.setTitle("Rank de candidatos", for: .normal)
             self.applyButton.isHidden = false
-            if job?.answers.isEmpty ?? true {
+            if job?.answers?.isEmpty ?? true {
                 self.applyButton.isEnabled = false
                 self.applyButton.backgroundColor = .lightGray
             }
@@ -87,6 +87,11 @@ class JobOpportunityDetailsViewController: UIViewController, UITableViewDelegate
             cell.setupApplyedCell(skill: skill)
         } else{
             cell.setupCell(skill: skill)
+        }
+        if cameFromCompany {
+            cell.answerLabel.text = "min: \(skill.PMD!) peso: \(skill.weight!)"
+            cell.answerLabel.isHidden = false
+            cell.answerLabel.textColor = .black
         }
           return cell
       }

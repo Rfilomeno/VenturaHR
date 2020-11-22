@@ -34,7 +34,7 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
     override func viewWillAppear(_ animated: Bool) {
         self.jobList = repository.getJobList()
         guard let unwrapedJobList = self.jobList else { return }
-        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid})
+        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid!})
         jobOpportunityTableView.reloadData()
     }
 
@@ -76,9 +76,9 @@ extension JobOpportunityListViewController: UISearchResultsUpdating{
         let searchBar = searchController.searchBar
         self.jobList = repository.getJobList()
         guard let unwrapedJobList = self.jobList else { return }
-        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid})
+        self.avalibleJobList = unwrapedJobList.filter({$0.stillValid!})
         if let searchText = searchBar.text {
-            let result = unwrapedJobList.filter({($0.title.uppercased().contains(searchText.uppercased())) || ($0.filterSkills(by: searchText))})
+            let result = unwrapedJobList.filter({($0.title!.uppercased().contains(searchText.uppercased())) || ($0.filterSkills(by: searchText))})
             if !isSearchBarEmpty{
                 self.avalibleJobList = result
                 jobOpportunityTableView.reloadData()

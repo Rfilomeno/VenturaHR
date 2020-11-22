@@ -37,7 +37,7 @@ public class JobOpportunityRepository {
         return jobList.filter({$0.companyEmail == company.email})
     }
     public func getJobList(from cadidate: Candidate) -> [JobOpportunity]{
-        let jobsAnswered = jobList.filter({!($0.answers.isEmpty)})
+        let jobsAnswered = jobList.filter({!($0.answers!.isEmpty)})
         return jobsAnswered.filter({$0.filterAnswer(candidate: cadidate)})
     }
     public func getJobList(by company: Company) -> [JobOpportunity]{
@@ -46,13 +46,13 @@ public class JobOpportunityRepository {
     }
     
     public func addAnswerTo(job: JobOpportunity, answer: Answer){
-        self.jobList.first(where: {$0.id == job.id})?.answers.append(answer)
+        self.jobList.first(where: {$0.id == job.id})?.answers!.append(answer)
     }
     
     public func getCandidateAnswer(for job: JobOpportunity) -> Answer?{
         let repository = UserRepository.shared
         guard let candidate = repository.getCurrentCandidate() else {return nil}
-        return job.answers.filter({$0.candidate.email == candidate.email}).first
+        return job.answers?.filter({$0.candidateEmail == candidate.email}).first
     }
     public func removeJobOpportunity(job: JobOpportunity){
         jobList.removeAll(where: {$0.id == job.id})
@@ -60,7 +60,7 @@ public class JobOpportunityRepository {
     public func removeCandidateAnswer(on job: JobOpportunity){
         let repository = UserRepository.shared
         if let candidate = repository.getCurrentCandidate(){
-            jobList.filter({$0.id == job.id}).first?.answers.removeAll(where: {$0.candidate.email == candidate.email})
+            jobList.filter({$0.id == job.id}).first?.answers!.removeAll(where: {$0.candidateEmail == candidate.email})
         }
     }
 }

@@ -7,17 +7,16 @@
 //
 
 import Foundation
+import FirebaseFirestoreSwift
 
-public class Skill: NSCopying{
+public class Skill: NSCopying, Identifiable, Codable {
     
-    
-    
-    let id:String
-    let name:String
+    @DocumentID public var id:String? = UUID().uuidString
+    var name:String?
     var description:String?
-    let weight: Double
-    let PMD: Double
-    var candidateAnswer: Double = 0
+    var weight: Double?
+    var PMD: Double?
+    var candidateAnswer: Double? = 0
     var haveMandatory: Bool {
         if PMD == 5{
             return candidateAnswer == 5
@@ -26,17 +25,26 @@ public class Skill: NSCopying{
     }
     var textAnswer: String {
         let skillDescription = ["Sem Conhecimento", "Júnior", "Pleno", "Senior", "Mestre Jedi"]
-        return  skillDescription[Int(candidateAnswer-1)]
+        return  skillDescription[Int(candidateAnswer!-1)]
     }
     
-    init(name:String, weight: Double, pmd: Double){
-        self.id = UUID().uuidString
-        self.name = name
-        self.weight = weight
-        self.PMD = pmd
-    }
     
     public func copy(with zone: NSZone? = nil) -> Any {
-        return Skill(name: name, weight: weight, pmd: PMD)
+        let newSkill = Skill()
+        newSkill.name = name
+        newSkill.weight = weight
+        newSkill.PMD = PMD
+        return newSkill
+    }
+    
+    init(){}
+    
+    enum CodingKeys: String, CodingKey {
+    case id
+    case name
+    case description
+    case weight
+    case PMD
+    case candidateAnswer
     }
 }

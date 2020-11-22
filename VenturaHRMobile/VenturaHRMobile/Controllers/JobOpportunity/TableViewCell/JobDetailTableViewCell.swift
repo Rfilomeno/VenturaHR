@@ -33,7 +33,7 @@ class JobDetailTableViewCell: UITableViewCell {
     public func setupApplyedCell(skill: Skill){
         self.skillTitleLabel.text = skill.name
         let skillDescription = ["Sem Conhecimento", "Júnior", "Pleno", "Senior", "Mestre Jedi"]
-        self.answerLabel.text = skillDescription[Int(skill.candidateAnswer-1)]
+        self.answerLabel.text = skillDescription[Int(skill.candidateAnswer!-1)]
         self.answerLabel.isHidden = false
     }
    

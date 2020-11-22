@@ -12,10 +12,23 @@ public class MockHelper{
     
     public static func getJobs() -> [JobOpportunity]{
         guard let company = MockHelper.getCompanys().first else {return []}
-        let skill1 = Skill(name: "iOS", weight: 5, pmd: 5)
-        let skill2 = Skill(name: "Git", weight: 1, pmd: 2)
-        let skill3 = Skill(name: "ingles", weight: 2, pmd: 3)
-        let skill4 = Skill(name: "PODs", weight: 3, pmd: 5)
+        let skill1 = Skill()
+        skill1.name = "iOS"
+        skill1.weight = 5
+        skill1.PMD = 5
+        let skill2 = Skill()
+        skill2.name = "Git"
+        skill2.weight = 1
+        skill2.PMD = 2
+        let skill3 = Skill()
+        skill3.name = "ingles"
+        skill3.weight = 2
+        skill3.PMD = 3
+        let skill4 = Skill()
+        skill4.name = "PODS"
+        skill4.weight = 3
+        skill4.PMD = 4
+        
         let skillList = [skill1, skill2, skill3, skill4]
         skill1.candidateAnswer = 4
         skill2.candidateAnswer = 5
@@ -23,12 +36,30 @@ public class MockHelper{
         skill4.candidateAnswer = 4
         let answeredSkill = [skill1, skill2, skill3, skill4]
         guard let candidate = MockHelper.getCandidates().first else {return []}
-        let answer = Answer(candidate: candidate, skills: answeredSkill)
-        let job1 = JobOpportunity(companyEmail: company.email!, title: "Analista de Sistemas", description: "Descrição Analista de Sistemas", skills: skillList)
+        let answer = Answer()
+        answer.candidateEmail = candidate.email
+        answer.skills = answeredSkill
+        let job1 = JobOpportunity()
+        job1.companyEmail = company.email!
+        job1.title = "Analista de Sistemas"
+        job1.description = "Descrição Analista de Sistemas"
+        job1.skills = skillList
         job1.answers = [answer]
-        let job2 = JobOpportunity(companyEmail: company.email!, title: "PO", description: "Descrição PO", skills: skillList)
-        let job3 = JobOpportunity(companyEmail: company.email!, title: "Analista de requisitos", description: "Descrição Analista de requisitos", skills: skillList)
-        let job4 = JobOpportunity(companyEmail: company.email!, title: "Agislista", description: "Descrição Agislista", skills: skillList)
+        let job2 = JobOpportunity()
+        job2.companyEmail = company.email!
+        job2.title = "PO"
+        job2.description = "Descrição PO"
+        job2.skills = skillList
+        let job3 = JobOpportunity()
+        job3.companyEmail = company.email!
+        job3.title = "Analista de requisitos"
+        job3.description = "Descrição Analista de requisitos"
+        job3.skills = skillList
+        let job4 = JobOpportunity()
+        job4.companyEmail = company.email!
+        job4.title = "Agislista"
+        job4.description = "Descrição Agislista"
+        job4.skills = skillList
         
         return [job1, job2, job3, job4]
     }

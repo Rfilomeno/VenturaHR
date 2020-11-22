@@ -66,19 +66,21 @@ public class UserRepository {
     }
     
     //MARK: Firebase create user
-    public func createFirebaseUserLogin(user: User){
+    public func createFirebaseUserLogin(user: User) -> Bool{
         var createdUser = user
+        var itWorked = false
         Auth.auth().createUser(withEmail: user.email!, password: user.password!) { authResult, error in
             if error != nil{
-                return
+                itWorked = false
             }else{
+                itWorked = true
                 if let uid = authResult?.user.uid {
                     createdUser.id = uid
                     user.type == .PF ? (self.createFirebaseCandidate(createdUser as! Candidate)) : (self.createFirebaseCompany(createdUser as! Company))
                 }
             }
-            
         }
+        return itWorked
     }
     
     public func createFirebaseCandidate(_ user: Candidate){
