@@ -58,7 +58,6 @@ public class JobOpportunityRepository {
     
     public func addAnswerTo(job: JobOpportunity, answer: Answer){
         job.answers?.append(answer)
-        //self.jobList.first(where: {$0.id == job.id})?.answers!.append(answer)
         addJobOpportunity(job: job)
     }
     

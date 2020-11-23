@@ -12,7 +12,6 @@ class JobListTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var companyLabel: UILabel!
-    //@IBOutlet weak var expirationDateLabel: UILabel!
     @IBOutlet weak var answeredLabel: UILabel!
     public var cameFromCompanyHome = false
     var repository = UserRepository.shared
@@ -32,7 +31,6 @@ class JobListTableViewCell: UITableViewCell {
         let company = repository.getUser(email: job.companyEmail!)
         titleLabel.text = job.title
         companyLabel.text = company?.name
-        //expirationDateLabel.text = job.expirationDate
         let repository = UserRepository.shared
         if let user = repository.getCurrentUser(){
             answeredLabel.isHidden = checkNotAnswered(job: job, user: user)

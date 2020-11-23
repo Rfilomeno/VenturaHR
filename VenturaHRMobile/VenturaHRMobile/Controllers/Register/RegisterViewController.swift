@@ -85,7 +85,6 @@ class RegisterViewController: UIViewController {
         company.phone = phoneField.text ?? ""
         company.address = addressField.text ?? ""
         
-//        repository.addUser(user: company)
         showLoadingIndicator(true)
         repository.createFirebaseUserLogin(user: company)
         
@@ -100,7 +99,6 @@ class RegisterViewController: UIViewController {
         candidate.phone = phoneField.text ?? ""
         candidate.address = addressField.text ?? ""
         
-//        repository.addUser(user: candidate)
         showLoadingIndicator(true)
         repository.createFirebaseUserLogin(user: candidate)
     }

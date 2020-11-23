@@ -22,7 +22,7 @@ public class LoginRepository{
         let instance = LoginRepository()
         return instance
     }()
-    //MARK: Mock
+    
     public func proceedLogin(email:String, password:String) {
         Auth.auth().signIn(withEmail: email, password: password) { [weak self] authResult, error in
             
@@ -32,23 +32,7 @@ public class LoginRepository{
                 self?.delegate?.returnFromRepository(resposta: false)
             } else {
                 self?.delegate?.returnFromRepository(resposta: true)
-//            self?.userRepository.fetchUserData()
-//            self?.user = self?.userRepository.getUser(email: email)
-                
           }
-        
-//        let repository = UserRepository.shared
-//
-//        if let user = repository.getUser(email: email){
-//            return (user.password == password ? user : nil)
-//        }
-//
-//        return nil
-
         }
-        
-//        return user
-        
     }
-    
 }

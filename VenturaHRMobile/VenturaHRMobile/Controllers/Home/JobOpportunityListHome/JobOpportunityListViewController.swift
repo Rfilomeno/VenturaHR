@@ -51,10 +51,6 @@ class JobOpportunityListViewController: UIViewController, UITableViewDelegate, U
         return avalibleJobList?.count ?? 0
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return UIDevice.current.userInterfaceIdiom == UIUserInterfaceIdiom.phone ? 60 : 100
-//    }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "jobCell", for: indexPath) as! JobListTableViewCell
         guard let job = avalibleJobList?[indexPath.row] else { return cell}
