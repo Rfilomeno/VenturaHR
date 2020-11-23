@@ -6,12 +6,7 @@ target 'VenturaHRMobile' do
   use_frameworks!
 
   # Pods for VenturaHRMobile
-  pod "Firebase/Auth"
-  pod "Firebase/Firestore"
-  pod 'Firebase/Core'
-  pod 'FirebaseFirestoreSwift'
-  pod "DropDown"
-  pod "JMMaskTextField-Swift"
+  
 
 
   target 'VenturaHRMobileTests' do
