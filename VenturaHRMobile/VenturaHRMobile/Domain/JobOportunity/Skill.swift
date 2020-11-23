@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 public class Skill: NSCopying, Identifiable, Codable {
     
-    @DocumentID public var id:String? = UUID().uuidString
+    public var id:String?
     var name:String?
     var description:String?
     var weight: Double?
@@ -31,6 +31,7 @@ public class Skill: NSCopying, Identifiable, Codable {
     
     public func copy(with zone: NSZone? = nil) -> Any {
         let newSkill = Skill()
+        newSkill.id = UUID().uuidString
         newSkill.name = name
         newSkill.weight = weight
         newSkill.PMD = PMD

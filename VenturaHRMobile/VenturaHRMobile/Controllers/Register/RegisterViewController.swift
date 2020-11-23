@@ -30,6 +30,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passorwdField: UITextField!
     @IBOutlet weak var confirmPassowrdField: UITextField!
     @IBOutlet weak var registerButton: UIButton!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
     let repository = UserRepository.shared
     public var isCompany = false
     
@@ -39,7 +40,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        repository.delegate = self
         setupView()
         if editMode {
             setupEditMode()
@@ -55,8 +56,13 @@ class RegisterViewController: UIViewController {
         }
     }
     
+    func showLoadingIndicator(_ show: Bool){
+        self.loadingIndicator.isHidden = !show
+        show ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating() 
+    }
     
     @IBAction func registerButtonAction(_ sender: Any) {
+        view.endEditing(true)
         if validateFields(){
             if editMode {
                 editUser()
@@ -80,11 +86,9 @@ class RegisterViewController: UIViewController {
         company.address = addressField.text ?? ""
         
 //        repository.addUser(user: company)
-        if repository.createFirebaseUserLogin(user: company) {
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            self.alertEmail()
-        }
+        showLoadingIndicator(true)
+        repository.createFirebaseUserLogin(user: company)
+        
     }
     
     private func registerCandidate(){
@@ -97,11 +101,8 @@ class RegisterViewController: UIViewController {
         candidate.address = addressField.text ?? ""
         
 //        repository.addUser(user: candidate)
-        if repository.createFirebaseUserLogin(user: candidate) {
-            self.navigationController?.popViewController(animated: true)
-        } else {
-            self.alertEmail()
-        }
+        showLoadingIndicator(true)
+        repository.createFirebaseUserLogin(user: candidate)
     }
     
     //MARK: EditMode
@@ -247,5 +248,19 @@ extension RegisterViewController: validateProtocol {
             validator = false
         }
         return validator
+    }
+}
+
+extension RegisterViewController: repositoryProtocol{
+    func returnFromRepository(resposta: Bool) {
+        if resposta {
+            showLoadingIndicator(false)
+            self.navigationController?.popViewController(animated: true)
+        } else {
+            showLoadingIndicator(false)
+            emailField.layer.borderWidth = 1
+            emailField.layer.borderColor = UIColor.red.cgColor
+            self.alertEmail()
+        }
     }
 }

@@ -47,7 +47,7 @@
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dKH-Qw-x6i">
-                                        <rect key="frame" x="99" y="124" width="82" height="30"/>
+                                        <rect key="frame" x="99" y="134" width="82" height="30"/>
                                         <color key="backgroundColor" red="0.29411764709999999" green="0.67843137249999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="48Y-Ro-1kd"/>
@@ -61,23 +61,36 @@
                                             <action selector="LoginButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Sbx-8q-LE4"/>
                                         </connections>
                                     </button>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail ou senha inválido!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TTE-o1-6Y3">
+                                        <rect key="frame" x="80" y="119" width="120.5" height="12"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                        <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="TL9-gd-W1t">
+                                        <rect key="frame" x="191" y="134" width="37" height="37"/>
+                                    </activityIndicatorView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="ny2-uD-TUa" secondAttribute="trailing" constant="50" id="8wn-nI-q6u"/>
                                     <constraint firstItem="vdo-qC-E9Y" firstAttribute="centerX" secondItem="Ymk-Vb-z7o" secondAttribute="centerX" id="BKB-OO-5uZ"/>
                                     <constraint firstAttribute="trailing" secondItem="d6E-zU-CtJ" secondAttribute="trailing" constant="50" id="E6v-Mb-oBJ"/>
-                                    <constraint firstItem="dKH-Qw-x6i" firstAttribute="top" secondItem="ny2-uD-TUa" secondAttribute="bottom" constant="8" id="MtH-ik-5fD"/>
+                                    <constraint firstItem="TTE-o1-6Y3" firstAttribute="centerX" secondItem="Ymk-Vb-z7o" secondAttribute="centerX" id="Fm8-wj-Whg"/>
+                                    <constraint firstItem="TTE-o1-6Y3" firstAttribute="top" secondItem="ny2-uD-TUa" secondAttribute="bottom" constant="3" id="IKU-gg-0kG"/>
+                                    <constraint firstItem="dKH-Qw-x6i" firstAttribute="top" secondItem="TTE-o1-6Y3" secondAttribute="bottom" constant="3" id="MtH-ik-5fD"/>
                                     <constraint firstAttribute="height" constant="198" id="Zkc-Ux-u7H"/>
                                     <constraint firstItem="dKH-Qw-x6i" firstAttribute="centerX" secondItem="Ymk-Vb-z7o" secondAttribute="centerX" id="ap0-MA-Ib3"/>
                                     <constraint firstItem="ny2-uD-TUa" firstAttribute="leading" secondItem="Ymk-Vb-z7o" secondAttribute="leading" constant="50" id="frE-ji-2g1"/>
                                     <constraint firstItem="ny2-uD-TUa" firstAttribute="top" secondItem="d6E-zU-CtJ" secondAttribute="bottom" constant="8" id="ggT-Ay-8eb"/>
+                                    <constraint firstItem="TL9-gd-W1t" firstAttribute="top" secondItem="dKH-Qw-x6i" secondAttribute="top" id="hDK-LU-cuJ"/>
                                     <constraint firstItem="ny2-uD-TUa" firstAttribute="centerX" secondItem="Ymk-Vb-z7o" secondAttribute="centerX" id="jH5-PS-LQ1"/>
                                     <constraint firstItem="vdo-qC-E9Y" firstAttribute="leading" secondItem="Ymk-Vb-z7o" secondAttribute="leading" constant="8" id="jPK-Hl-r2R"/>
                                     <constraint firstItem="d6E-zU-CtJ" firstAttribute="leading" secondItem="Ymk-Vb-z7o" secondAttribute="leading" constant="50" id="klZ-PX-w1m"/>
                                     <constraint firstItem="d6E-zU-CtJ" firstAttribute="top" secondItem="vdo-qC-E9Y" secondAttribute="bottom" constant="8" id="mjs-Pp-oSe"/>
                                     <constraint firstItem="d6E-zU-CtJ" firstAttribute="centerX" secondItem="Ymk-Vb-z7o" secondAttribute="centerX" id="utc-Pl-2Lu"/>
                                     <constraint firstItem="vdo-qC-E9Y" firstAttribute="top" secondItem="Ymk-Vb-z7o" secondAttribute="top" constant="8" id="vLi-fv-AtV"/>
+                                    <constraint firstItem="TL9-gd-W1t" firstAttribute="leading" secondItem="dKH-Qw-x6i" secondAttribute="trailing" constant="10" id="zUG-4J-U6f"/>
                                     <constraint firstAttribute="trailing" secondItem="vdo-qC-E9Y" secondAttribute="trailing" constant="8" id="zUR-Ur-ekO"/>
                                 </constraints>
                             </view>
@@ -95,7 +108,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X33-Iy-n5Z">
-                                <rect key="frame" x="103.5" y="367" width="113" height="30"/>
+                                <rect key="frame" x="103.5" y="377" width="113" height="30"/>
                                 <state key="normal" title="Criar nova conta"/>
                                 <connections>
                                     <action selector="newAccountButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w0W-1J-PY4"/>
@@ -122,7 +135,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="Bey-TZ-gwO"/>
                     <connections>
+                        <outlet property="alertLoginFailLabel" destination="TTE-o1-6Y3" id="skR-mR-wZF"/>
                         <outlet property="emailField" destination="d6E-zU-CtJ" id="PAE-wB-VeE"/>
+                        <outlet property="loadingIndicator" destination="TL9-gd-W1t" id="bmd-S7-fX6"/>
                         <outlet property="newAccountButton" destination="8bC-Xf-vdC" id="Icm-mQ-vlI"/>
                         <outlet property="passwordField" destination="ny2-uD-TUa" id="ugX-g9-3z1"/>
                     </connections>

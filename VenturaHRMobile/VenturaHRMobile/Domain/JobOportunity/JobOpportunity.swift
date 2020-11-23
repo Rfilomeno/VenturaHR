@@ -11,7 +11,8 @@ import FirebaseFirestoreSwift
 
 public class JobOpportunity:  Identifiable, Codable {
     
-    @DocumentID public var id:String? = UUID().uuidString
+    @DocumentID public var id:String?
+    var myIdReference: String?
     var companyEmail:String?
     var title: String?
     var description:String?
@@ -24,6 +25,7 @@ public class JobOpportunity:  Identifiable, Codable {
     init(){}
     
     enum CodingKeys: String, CodingKey {
+    case myIdReference
     case companyEmail
     case title
     case description

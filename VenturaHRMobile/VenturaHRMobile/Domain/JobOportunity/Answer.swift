@@ -11,7 +11,7 @@ import FirebaseFirestoreSwift
 
 public class Answer: Identifiable, Codable {
     
-    @DocumentID public var id: String? = UUID().uuidString
+    public var id: String?
     var candidateEmail: String?
     var skills:[Skill]? = []
     var answerDate: String? = DateHelper.getCurrentDate()

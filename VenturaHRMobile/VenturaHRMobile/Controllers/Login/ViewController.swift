@@ -13,30 +13,32 @@ class ViewController: UIViewController {
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet var newAccountButton: UIView!
-    
+    @IBOutlet weak var alertLoginFailLabel: UILabel!
+    @IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
+    var loginRepository = LoginRepository.shared
+    var email: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        loginRepository.delegate = self
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         emailField.text = ""
         passwordField.text = ""
+        alertLoginFailLabel.isHidden = true
     }
-
+    func showLoadingIndicator(_ show: Bool){
+        self.loadingIndicator.isHidden = !show
+        show ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
+    }
     @IBAction func LoginButtonAction(_ sender: Any) {
-        let user = LoginRepository.proceedLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
-        if let userLogged = user{
-            let repository = UserRepository.shared
-            repository.setCurrentUser(user: userLogged)
-            let tabBar = HomeStrategy.getTabBar(for: userLogged)
-            self.present(tabBar, animated: true)
-        } else {
-            print("Deu ruim no loggin")
-        }
-        
+        showLoadingIndicator(true)
+        view.endEditing(true)
+        alertLoginFailLabel.isHidden = true
+        self.email = emailField.text ?? ""
+        let user = loginRepository.proceedLogin(email: emailField.text ?? "", password: passwordField.text ?? "")
     }
     
     func presentRegisterController(forCompany: Bool){
@@ -65,3 +67,21 @@ class ViewController: UIViewController {
     
 }
 
+extension ViewController: repositoryProtocol{
+    func returnFromRepository(resposta: Bool) {
+        showLoadingIndicator(false)
+        if resposta {
+            let repository = UserRepository.shared
+            if let uemail = email, let userLogged = repository.getUser(email: uemail ){
+            
+                repository.setCurrentUser(user: userLogged)
+                let tabBar = HomeStrategy.getTabBar(for: userLogged)
+                self.present(tabBar, animated: true)
+            } else {
+                alertLoginFailLabel.isHidden = false
+            }
+        } else {
+            alertLoginFailLabel.isHidden = false
+        }
+    }
+}

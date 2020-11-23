@@ -16,6 +16,7 @@
                 <outlet property="cpfField" destination="8Qs-oc-1Jw" id="cmd-nr-jvB"/>
                 <outlet property="cpfLabel" destination="Ddk-yZ-aTy" id="BJp-jY-DS7"/>
                 <outlet property="emailField" destination="kbW-fM-6eU" id="wrf-8S-2vc"/>
+                <outlet property="loadingIndicator" destination="04I-pE-r05" id="cMM-gY-X2J"/>
                 <outlet property="nameField" destination="dID-Rl-HLD" id="x4V-O7-6Us"/>
                 <outlet property="nameLabel" destination="ONB-6h-Cz9" id="xsz-5e-FFx"/>
                 <outlet property="passorwdField" destination="ntP-TD-IdZ" id="5Kk-f7-elg"/>
@@ -124,8 +125,8 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byk-vy-2aq">
-                    <rect key="frame" x="147" y="510" width="120" height="30"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byk-vy-2aq">
+                    <rect key="frame" x="142" y="453" width="91" height="35"/>
                     <color key="backgroundColor" red="0.29411764709999999" green="0.67843137249999996" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
                     <state key="normal" title="Cadastrar">
@@ -135,6 +136,9 @@
                         <action selector="registerButtonAction:" destination="-1" eventType="touchUpInside" id="gbt-aH-KlA"/>
                     </connections>
                 </button>
+                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="04I-pE-r05">
+                    <rect key="frame" x="248" y="453" width="37" height="37"/>
+                </activityIndicatorView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
@@ -156,6 +160,7 @@
                 <constraint firstItem="Ddk-yZ-aTy" firstAttribute="top" secondItem="FF3-lO-bOL" secondAttribute="bottom" constant="25" id="VWI-nw-3Om"/>
                 <constraint firstItem="FF3-lO-bOL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Z6X-2l-ESq"/>
                 <constraint firstItem="grB-c0-nlU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZJ6-tR-vzI"/>
+                <constraint firstItem="04I-pE-r05" firstAttribute="leading" secondItem="byk-vy-2aq" secondAttribute="trailing" constant="15" id="amV-B0-hau"/>
                 <constraint firstItem="cQB-rg-62h" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="cAa-kj-iLe"/>
                 <constraint firstItem="8Qs-oc-1Jw" firstAttribute="top" secondItem="kbW-fM-6eU" secondAttribute="bottom" constant="8" id="cuN-gR-WSu"/>
                 <constraint firstItem="ntP-TD-IdZ" firstAttribute="leading" secondItem="r4t-Rq-nhR" secondAttribute="trailing" constant="8" id="ddy-QU-2Rg"/>
@@ -173,6 +178,7 @@
                 <constraint firstItem="yth-2y-GfT" firstAttribute="leading" secondItem="K7f-n4-XFa" secondAttribute="trailing" constant="26" id="oWc-KZ-YWv"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ESt-kh-PcX" secondAttribute="trailing" constant="20" id="ouN-OX-PSf"/>
                 <constraint firstItem="cQB-rg-62h" firstAttribute="top" secondItem="r4t-Rq-nhR" secondAttribute="bottom" constant="25" id="pBs-Dg-DSb"/>
+                <constraint firstItem="04I-pE-r05" firstAttribute="top" secondItem="byk-vy-2aq" secondAttribute="top" id="raW-W5-aRU"/>
                 <constraint firstItem="4z2-HW-kEl" firstAttribute="leading" secondItem="cQB-rg-62h" secondAttribute="trailing" constant="8" id="sPd-pu-180"/>
                 <constraint firstItem="zlK-CA-1yx" firstAttribute="top" secondItem="K7f-n4-XFa" secondAttribute="bottom" constant="23" id="sUE-Rc-7mZ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QbV-le-YbD" secondAttribute="trailing" constant="20" id="sdB-q8-sH0"/>

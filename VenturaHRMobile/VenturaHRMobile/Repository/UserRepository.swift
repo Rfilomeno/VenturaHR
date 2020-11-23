@@ -12,10 +12,18 @@ import Firebase
 import FirebaseFirestore
 import FirebaseFirestoreSwift
 
+public protocol repositoryProtocol: NSObjectProtocol{
+    func returnFromRepository(resposta: Bool)
+}
+extension repositoryProtocol{
+    func returnFromRepository(resposta: Bool) {}
+}
+
 public class UserRepository {
     private var candidates: [Candidate]
     private var companys: [Company]
     private var currentUser: User?
+    public var delegate: repositoryProtocol?
     private var db = Firestore.firestore()
     static var shared: UserRepository = {
         let instance = UserRepository()
@@ -23,9 +31,9 @@ public class UserRepository {
     }()
     
     private init(){
-        //MOCK
-        candidates = MockHelper.getCandidates()
-        companys = MockHelper.getCompanys()
+        
+        candidates = []
+        companys = []
     }
     
     public func setCurrentUser(user: User?){
@@ -52,35 +60,49 @@ public class UserRepository {
     
     public func addUser(user: User){
         if (user.type == .PF){
-            candidates.removeAll(where: {$0.email == user.email})
-            self.candidates.append(user as! Candidate)
+            let candidate = db.collection("candidate").document("\(user.id!)")
+            do{
+             try candidate.setData(from: user as! Candidate)
+            }catch let error{
+                print(error)
+            }
+
         } else {
-            companys.removeAll(where: {$0.email == user.email})
-            self.companys.append(user as! Company)
+            let company = db.collection("company").document("\(user.id!)")
+            do{
+             try company.setData(from: user as! Company)
+            }catch let error{
+                print(error)
+            }
+
         }
     }
     
     static func loggoff(context: UIViewController){
         shared.setCurrentUser(user: nil)
+        do {
+            try Auth.auth().signOut()
+        } catch {
+            print("Deu ruim ao deslogar")
+        }
         context.dismiss(animated: true, completion: nil)
     }
     
     //MARK: Firebase create user
-    public func createFirebaseUserLogin(user: User) -> Bool{
+    public func createFirebaseUserLogin(user: User){
         var createdUser = user
-        var itWorked = false
         Auth.auth().createUser(withEmail: user.email!, password: user.password!) { authResult, error in
+            sleep(1)
             if error != nil{
-                itWorked = false
+                self.delegate?.returnFromRepository(resposta: false)
             }else{
-                itWorked = true
+                self.delegate?.returnFromRepository(resposta: true)
                 if let uid = authResult?.user.uid {
                     createdUser.id = uid
                     user.type == .PF ? (self.createFirebaseCandidate(createdUser as! Candidate)) : (self.createFirebaseCompany(createdUser as! Company))
                 }
             }
         }
-        return itWorked
     }
     
     public func createFirebaseCandidate(_ user: Candidate){
@@ -97,5 +119,28 @@ public class UserRepository {
         } catch let error {
             print("Deu ruim salvando user: \(error)")
         }
+    }
+    
+    public func fetchUserData(){
+        db.collection("candidate").addSnapshotListener { (querySnapshot, error) in
+        guard let documents = querySnapshot?.documents else {
+          print("No documents")
+          return
+        }
+            self.candidates = documents.compactMap { queryDocumentSnapshot -> Candidate? in
+            return try? queryDocumentSnapshot.data(as: Candidate.self)
+            }
+        }
+        
+        db.collection("company").addSnapshotListener { (querySnapshot, error) in
+        guard let documents = querySnapshot?.documents else {
+          print("No documents")
+          return
+        }
+            self.companys = documents.compactMap { queryDocumentSnapshot -> Company? in
+            return try? queryDocumentSnapshot.data(as: Company.self)
+            }
+        }
+        
     }
 }

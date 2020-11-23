@@ -70,7 +70,9 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
     
     
     @IBAction func addSkillButtonAction(_ sender: Any) {
+        view.endEditing(true)
         let skill = Skill()
+        skill.id = UUID().uuidString
         skill.name = skillNameField.text ?? ""
         skill.weight = Double(Int(skillWeightSlider.value.rounded()))
         skill.PMD = Double(Int(pmdSlider.value.rounded()))
@@ -88,6 +90,8 @@ class RegisterJobModalViewController: UIViewController, UITableViewDelegate, UIT
         if validateFields(){
             guard let company = userRepository.getCurrentCompany() else {return}
             let job = JobOpportunity()
+            job.id = UUID().uuidString
+            job.myIdReference = job.id
             job.companyEmail = company.email!
             job.title = titleField.text ?? ""
             job.description = descriptionField.text ?? ""
