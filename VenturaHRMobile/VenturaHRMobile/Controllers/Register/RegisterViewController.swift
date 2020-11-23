@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JMMaskTextField_Swift
 
 protocol validateProtocol: NSObjectProtocol {
     func validateFields() -> Bool
@@ -22,7 +23,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var cpfLabel: UILabel!
-    @IBOutlet weak var cpfField: UITextField!
+    @IBOutlet weak var cpfField: JMMaskTextField!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var addressField: UITextField!
     @IBOutlet weak var contactLabel: UILabel!
@@ -51,10 +52,14 @@ class RegisterViewController: UIViewController {
         if isCompany {
             nameLabel.text = "Razão Social:"
             cpfLabel.text = "CNPJ:"
+            cpfField.maskString = "00.000.000/0000-00"
             contactLabel.isHidden = false
             contactField.isHidden = false
         }
+        
+        
     }
+    
     
     func showLoadingIndicator(_ show: Bool){
         self.loadingIndicator.isHidden = !show
@@ -162,7 +167,7 @@ class RegisterViewController: UIViewController {
     
     func alertEmail(){
         
-        let alert = UIAlertController(title: "Email já registrado", message: "O Email já está registrado em nossa base de dados.", preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Email invalido", message: "O Email já está registrado em nossa base de dados ou é invalido.", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }

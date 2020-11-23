@@ -11,6 +11,8 @@ target 'VenturaHRMobile' do
   pod 'Firebase/Core'
   pod 'FirebaseFirestoreSwift'
   pod "DropDown"
+  pod "JMMaskTextField-Swift"
+
 
   target 'VenturaHRMobileTests' do
     inherit! :search_paths
