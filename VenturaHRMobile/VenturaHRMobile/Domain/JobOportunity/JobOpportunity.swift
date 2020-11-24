@@ -20,7 +20,12 @@ public class JobOpportunity:  Identifiable, Codable {
     var skills: [Skill]? = []
     var publicationDate: String? = DateHelper.getCurrentDate()
     var expirationDate: String? = DateHelper.getExpirationDate()
-    var stillValid: Bool? = true
+    var stillValid: Bool? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy"
+        let dateFromString = dateFormatter.date(from: expirationDate!)
+    return !(Date() >= dateFromString!)
+    }
     
     init(){}
     
@@ -33,7 +38,6 @@ public class JobOpportunity:  Identifiable, Codable {
     case skills
     case publicationDate
     case expirationDate
-    case stillValid
     }
     
     public func filterSkills(by text: String) -> Bool{
