@@ -9,47 +9,17 @@
 import Foundation
 import UIKit
 
-public class HomeStrategy{
+public protocol HomeStrategyProtocol {
+    static func getHomeStrategy(for user: User) -> UITabBarController
+}
+
+public class HomeStrategy: HomeStrategyProtocol{
     
-    public static func getTabBar(for user:User) -> UITabBarController{
-        if (user.type == .PJ){
-            let vc1 = UINavigationController(rootViewController: JobOpportunityListViewController(nibName: "JobOpportunityListViewController", bundle: nil))
-            let vc2 = UINavigationController(rootViewController: CompanyHomeViewController(nibName: "CompanyHomeViewController", bundle: nil))
-            vc1.title = "Vagas"
-            vc2.title = "Empresa"
-
-            let tabViewController = UITabBarController()
-            tabViewController.setViewControllers([vc1, vc2], animated: false)
-               
-            if let items = tabViewController.tabBar.items {
-                let images = ["house", "gear"]
-                   
-                for x in 0..<items.count{
-                    items[x].image = UIImage(systemName: images[x])
-                }
-            }
-            tabViewController.modalPresentationStyle = .fullScreen
-            
-            return tabViewController
-        } else {
-            let vc1 = UINavigationController(rootViewController: JobOpportunityListViewController(nibName: "JobOpportunityListViewController", bundle: nil))
-            let vc2 = UINavigationController(rootViewController: CandidateHomeViewController(nibName: "CandidateHomeViewController", bundle: nil))
-            vc1.title = "Oportunidades"
-            vc2.title = "Usuário"
-
-            let tabViewController = UITabBarController()
-            tabViewController.setViewControllers([vc1, vc2], animated: false)
-               
-            if let items = tabViewController.tabBar.items {
-                let images = ["house", "gear"]
-                   
-                for x in 0..<items.count{
-                    items[x].image = UIImage(systemName: images[x])
-                }
-            }
-            tabViewController.modalPresentationStyle = .fullScreen
-            
-            return tabViewController
+    public static func getHomeStrategy(for user: User) -> UITabBarController{
+        if user.type == .PJ {
+            return PJHomeStrategy.getHomeStrategy(for: user)
+        } else{
+            return PFHomeStrategy.getHomeStrategy(for: user)
         }
     }
 }

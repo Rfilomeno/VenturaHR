@@ -74,7 +74,7 @@ extension ViewController: repositoryProtocol{
             if let uemail = email, let userLogged = repository.getUser(email: uemail ){
             
                 repository.setCurrentUser(user: userLogged)
-                let tabBar = HomeStrategy.getTabBar(for: userLogged)
+                let tabBar = HomeStrategy.getHomeStrategy(for: userLogged)
                 self.present(tabBar, animated: true)
             } else {
                 alertLoginFailLabel.isHidden = false

@@ -50,6 +50,8 @@
 		779C36B22566BE2F0004413E /* JobOpportunityDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779C36B02566BE2F0004413E /* JobOpportunityDetailsViewController.xib */; };
 		779C36B82566CE490004413E /* JobDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 779C36B62566CE490004413E /* JobDetailTableViewCell.swift */; };
 		779C36B92566CE490004413E /* JobDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 779C36B72566CE490004413E /* JobDetailTableViewCell.xib */; };
+		77ADF93E256EF7CE0028CC4A /* PJHomeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ADF93D256EF7CE0028CC4A /* PJHomeStrategy.swift */; };
+		77ADF940256EF83C0028CC4A /* PFHomeStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77ADF93F256EF83C0028CC4A /* PFHomeStrategy.swift */; };
 		F70D06301EF7E30AE4B08AD3 /* Pods_VenturaHRMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EE9CF665029C01A8F6C5C5B /* Pods_VenturaHRMobile.framework */; };
 /* End PBXBuildFile section */
 
@@ -112,6 +114,8 @@
 		779C36B02566BE2F0004413E /* JobOpportunityDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobOpportunityDetailsViewController.xib; sourceTree = "<group>"; };
 		779C36B62566CE490004413E /* JobDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JobDetailTableViewCell.swift; sourceTree = "<group>"; };
 		779C36B72566CE490004413E /* JobDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JobDetailTableViewCell.xib; sourceTree = "<group>"; };
+		77ADF93D256EF7CE0028CC4A /* PJHomeStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PJHomeStrategy.swift; sourceTree = "<group>"; };
+		77ADF93F256EF83C0028CC4A /* PFHomeStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PFHomeStrategy.swift; sourceTree = "<group>"; };
 		8C60C195515793643D396249 /* Pods_VenturaHRMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_VenturaHRMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A8E21BDCDB8CC5D4653144 /* Pods-VenturaHRMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobileTests.release.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobileTests/Pods-VenturaHRMobileTests.release.xcconfig"; sourceTree = "<group>"; };
 		CC73530EA9ABE5AC60496050 /* Pods-VenturaHRMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VenturaHRMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-VenturaHRMobileTests/Pods-VenturaHRMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 			isa = PBXGroup;
 			children = (
 				7724C5E02565BE4D00EF38BF /* HomeStrategy.swift */,
+				77ADF93D256EF7CE0028CC4A /* PJHomeStrategy.swift */,
+				77ADF93F256EF83C0028CC4A /* PFHomeStrategy.swift */,
 			);
 			path = HomeStrategy;
 			sourceTree = "<group>";
@@ -679,11 +685,13 @@
 				779C36B12566BE2F0004413E /* JobOpportunityDetailsViewController.swift in Sources */,
 				77011B5A256731C100496002 /* CandidateHomeViewController.swift in Sources */,
 				77011B542566FA6000496002 /* AnswerTableViewCell.swift in Sources */,
+				77ADF93E256EF7CE0028CC4A /* PJHomeStrategy.swift in Sources */,
 				771C7896256817A900E1FEF2 /* RegisterJobModalViewController.swift in Sources */,
 				7724C5D82565B06200EF38BF /* JobOpportunityListViewController.swift in Sources */,
 				771C788F2567D87E00E1FEF2 /* CompanyHomeViewController.swift in Sources */,
 				772EE5DB25557DB200840A0E /* SceneDelegate.swift in Sources */,
 				77151D1925695B71001F9CE7 /* Sizes.swift in Sources */,
+				77ADF940256EF83C0028CC4A /* PFHomeStrategy.swift in Sources */,
 				7724C5E12565BE4D00EF38BF /* HomeStrategy.swift in Sources */,
 				776AE28225645613008403F2 /* Answer.swift in Sources */,
 				776AE27925644A4A008403F2 /* User.swift in Sources */,
