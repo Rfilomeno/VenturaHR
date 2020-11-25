@@ -75,7 +75,6 @@ class CompanyHomeViewController: UIViewController, UITableViewDelegate, UITableV
                 self.jobRepository.removeJobOpportunity(job: job)
                 self.companyJobsPublished?.removeAll(where: {$0.id == job.id})
                 tableView.deleteRows(at: [indexPath], with: .fade)
-                self.setupView()
                 }))
             alert.addAction(UIAlertAction(title: "cancelar", style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil)

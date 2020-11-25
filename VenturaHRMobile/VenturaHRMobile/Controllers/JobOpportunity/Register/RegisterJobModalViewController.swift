@@ -127,6 +127,7 @@ extension RegisterJobModalViewController: validateProtocol{
         if skillList.isEmpty {
             skillNameField.layer.borderWidth = 1
             skillNameField.layer.borderColor = UIColor.red.cgColor
+            validator = false
         }else {
             skillNameField.layer.borderWidth = 0
         }
